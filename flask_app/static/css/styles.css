@@ -21,8 +21,7 @@ body {
 }
 
 .container {
-    /* max-width: 60vw; */
-    margin: 0 auto;
+    margin: 0 8vw;
 }
 
 .section-padding {
@@ -87,7 +86,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 16px 0;
 }
 
 .logo {
@@ -307,7 +306,7 @@ body {
 }
 
 /* RESPONSIVENESS */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     /* Tablet adjustments */
     .service-grid, .process-content, .about-grid {
         flex-direction: column;
