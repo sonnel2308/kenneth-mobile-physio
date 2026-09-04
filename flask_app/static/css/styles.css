@@ -21,8 +21,7 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    /* max-width: 60vw; */
     margin: 0 auto;
 }
 
@@ -100,11 +99,9 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: space-between;
+    gap: 32px;
     align-items: center;
-}
-
-.nav-links li {
-    margin-left: 30px;
 }
 
 .nav-links a {
@@ -118,11 +115,16 @@ body {
     color: var(--color-primary);
 }
 
+.nav-contact {
+    flex: 1;
+}
+
 .cta-button-nav {
     background-color: var(--color-secondary);
     color: white !important;
     padding: 8px 18px;
     border-radius: 25px;
+    white-space: nowrap;
 }
 
 .cta-button-nav:hover {
@@ -133,7 +135,7 @@ body {
 
 /* 2. HERO SECTION */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/stock-photo.png'); /* Placeholder: Image of stretching/therapy */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/images/stock-photo.png'); /* Placeholder: Image of stretching/therapy */
     background-size: cover;
     background-position: center;
     color: white;
@@ -311,6 +313,10 @@ body {
         flex-direction: column;
         gap: 25px;
     }
+
+    .nav-contact {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -337,16 +343,10 @@ body {
         /* Stack links vertically or adjust layout if needed, but for simplicity, we'll just let them wrap or stack */
         flex-direction: column;
         align-items: flex-start;
+        gap: 8px;
     }
 
     .nav-links li {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .cta-button-nav {
         width: 100%;
         text-align: center;
     }
