@@ -134,7 +134,7 @@ body {
 
 /* 2. HERO SECTION */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/images/stock-photo.png'); /* Placeholder: Image of stretching/therapy */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('static/images/stock-photo.png'); /* Placeholder: Image of stretching/therapy */
     background-size: cover;
     background-position: center;
     color: white;
