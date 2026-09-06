@@ -4,30 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenneth Mobile Physiotherapy | Expert Physiotherapy</title>
-    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="static/images/brand-logo.png" style="height:64px" />
-            </div>
-            <div class="nav-contact">
-                <p>📞 0451 798 814</p>
-                <p>📧 <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></p>
-                <p>🕓 Monday-Saturday 9am-5pm</p>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#"s>Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#" class="cta-button-nav">Book Appointment</a></li>
-            </ul>
-        </div>
-    </nav>
+{% include 'components/navbar.html' %}
 
     <!-- Hero Section -->
     <header class="hero-section">

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Optimal Motion Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+{% include 'components/navbar.html' %}
+
+    <!-- Booking Form Section -->
+    <section id="booking-form-container" class="booking-section section-padding">
+        <div class="container">
+            <div class="form-card">
+                <h2 class="text-center mb-4">Schedule Consultation</h2>
+                <p class="text-center mb-5">Please fill in your details below to book your appointment with our expert physiotherapists.</p>
+                
+                <!-- Form structure -->
+                <form action="/book-appointment" method="POST" class="booking-form">
+                    <div class="form-group">
+                        <label for="full_name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="full_name" name="full_name" class="form-control" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="(04) XXX XXX XXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="you@example.com">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large mt-4">Submit Booking Request</button>
+                    
+                    <p class="disclaimer mt-4">We respect your privacy. Your details will only be used for booking purposes.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Copied/Adapted for consistency) -->
+    <footer class="footer-section section-padding">
+        <div class="container">
+            <p>&copy; 2026 Optimal Motion Therapy. All Rights Reserved.</p>
+            <p>123 Health St, City, State | Email: info@optimalmotion.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle the CTA button on the nav bar when on the booking page
+        document.querySelector('.cta-button-nav').setAttribute('href', '/booking');
+    </script>
+</body>
+</html>

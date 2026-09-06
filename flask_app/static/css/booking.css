@@ -1,0 +1,84 @@
+/* 
+ * Booking Page Stylesheet 
+ * Designed to be consistent with general styles.css
+ */
+
+/* --- Booking Page Specific Styling --- */
+
+/* Booking Form Card Styling */
+.form-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.form-card p {
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.form-group .required {
+    color: #e74c3c;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Button Styling Consistency */
+.btn-large {
+    padding: 12px 30px !important;
+    font-size: 1.1em !important;
+}
+
+/* Disclaimer */
+.disclaimer {
+    font-size: 0.9em;
+    color: #95a5a6;
+    margin-top: 20px !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .booking-hero {
+        padding: 80px 20px;
+    }
+    .booking-hero h1 {
+        font-size: 2.5em;
+    }
+    .form-card {
+        padding: 30px 20px;
+    }
+}
