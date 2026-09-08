@@ -164,6 +164,7 @@ body {
 .services-section {
     text-align: center;
 }
+
 .services-section h2 {
     font-size: 2.2rem;
     margin-bottom: 50px;
@@ -172,16 +173,18 @@ body {
 
 .service-grid {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .service-card {
-    flex: 1;
+    flex: 0 0 20vw;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
+    min-width: 25vw;
 }
 
 .service-card:hover {
@@ -205,6 +208,7 @@ body {
 .process-section {
     text-align: center;
 }
+
 .process-content {
     display: flex;
     gap: 30px;
@@ -355,4 +359,40 @@ body {
         max-width: 350px;
         margin: 0 auto;
     }
+}
+
+/* Slider */
+.slider {
+  overflow: hidden;
+  width: 100%;
+  min-height: 30vh;
+}
+
+.slider h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--color-dark);
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: slide 20s linear infinite;
+}
+
+.track img {
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

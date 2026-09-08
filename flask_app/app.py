@@ -1,11 +1,16 @@
-from flask import Flask, render_template
-from flask import request # Need to import request to process form data
+from flask import Flask, render_template, request
+import os
+
+from config import STATIC_IMAGES_PATH
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', title='Home Page')
+    service_coverage_images_path = STATIC_IMAGES_PATH / "service_coverage"
+    service_coverage_images = os.listdir(service_coverage_images_path)
+    return render_template('index.html', title='Home Page', service_coverage_images=service_coverage_images)
 
 @app.route('/booking', methods=['GET'])
 def booking_page():

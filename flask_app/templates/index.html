@@ -20,32 +20,69 @@
         </div>
     </header>
 
+    <div class="slider">
+        <h2>Service Coverage</h2>
+        <div class="track">
+            {% for item in service_coverage_images %}
+                <img src="{{ url_for('static', filename='images/service_coverage/' ~ item) }}" alt="{{ item }}">
+            {% endfor %}
+            {% for item in service_coverage_images %}
+                <img src="{{ url_for('static', filename='images/service_coverage/' ~ item) }}" alt="duplicate-{{ item }}">
+            {% endfor %}
+        </div>
+    </div>
+
     <!-- Services Overview Section -->
-    <section id="services" class="services-section section-padding">
+    <section id="services" class="services-section section-padding bg-light">
         <div class="container">
-            <h2>Comprehensive Care for Every Need</h2>
+            <h2>Our Services</h2>
             <div class="service-grid">
                 <div class="service-card">
-                    <i class="icon">🧘</i>
-                    <h3>Manual Therapy</h3>
-                    <p>Targeted hands-on techniques to relieve pain and restore joint mobility.</p>
+                    <i class="icon">👵</i>
+                    <h3>Aged Care Physiotherapy</h3>
+                    <p>Maintain mobility, strength and independence.</p>
+                </div>
+                <div class="service-card">
+                    <i class="icon">📰</i>
+                    <h3>DVA (Gold and White Cards)</h3>
+                    <p>Specialist care for veterans and their families.</p>
+                </div>
+                <div class="service-card">
+                    <i class="icon">👩‍🦽</i>
+                    <h3>NDIS</h3>
+                    <p>Functional goals and better everyday living.</p>
+                </div>
+                <div class="service-card">
+                    <i class="icon">🐱</i>
+                    <h3>Private Clients</h3>
+                    <p>Quality care for your health and wellbeing.</p>
+                </div>
+                <div class="service-card">
+                    <i class="icon">🦍</i>
+                    <h3>Fall Prevention</h3>
+                    <p>TODO</p>
+                </div>
+                <div class="service-card">
+                    <i class="icon">⚖</i>
+                    <h3>Balance Training</h3>
+                    <p>TODO</p>
+                </div>
+                <div class="service-card">
+                    <i class="icon">👩‍⚕️</i>
+                    <h3>Pre/Post Operative Physiotherapy</h3>
+                    <p>TODO</p>
                 </div>
                 <div class="service-card">
                     <i class="icon">💪</i>
-                    <h3>Rehabilitation Exercises</h3>
-                    <p>Building strength and endurance through customized exercise plans.</p>
-                </div>
-                <div class="service-card">
-                    <i class="icon">🩹</i>
-                    <h3>Injury Management</h3>
-                    <p>From sprains to chronic pain, we guide you through the recovery process safely.</p>
+                    <h3>Strength, Mobility and Functional Capacity Building</h3>
+                    <p>TODO</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- The Process Section -->
-    <section id="process" class="process-section section-padding bg-light">
+    <section id="process" class="process-section section-padding">
         <div class="container">
             <div class="process-content">
                 <div class="step">
