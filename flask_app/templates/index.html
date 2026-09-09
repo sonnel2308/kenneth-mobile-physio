@@ -8,15 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-{% include 'components/navbar.html' %}
+    {% include 'components/navbar.html' %}
 
-    <!-- Hero Section -->
     <header class="hero-section">
         <div class="container hero-content">
-            <h1>Rediscover Pain-Free Movement.</h1>
-            <p class="subtitle">Expert, personalized physiotherapy care to help you live life to the fullest. Start your journey to recovery today.</p>
-            <a href="#contact" class="btn btn-primary">Book a Consultation Today</a>
-            <p class="disclaimer">Accepting new patients. Free initial assessment available.</p>
+            <h1>Mobile Physiotherapy That Comes to You</h1>
+            <p class="subtitle">Stay Active • Stay Independent • Live Better</p>
+            <a href="#contact" class="btn btn-primary">Book an Appointment</a>
+            <p class="disclaimer">Professional, personalised physiotherapy services in the comfort of your home - for all ages and all mobility levels</p>
         </div>
     </header>
 
@@ -32,10 +31,10 @@
         </div>
     </div>
 
-    <!-- Services Overview Section -->
     <section id="services" class="services-section section-padding bg-light">
         <div class="container">
             <h2>Our Services</h2>
+            <div class="services-description">Our mobile physiotherapy services are designed to support your health, mobility and quality of life.</div>
             <div class="service-grid">
                 <div class="service-card">
                     <i class="icon">👵</i>
@@ -81,55 +80,42 @@
         </div>
     </section>
 
-    <!-- The Process Section -->
-    <section id="process" class="process-section section-padding">
-        <div class="container">
-            <div class="process-content">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h4>Assessment</h4>
-                    <p>We start with a thorough evaluation to identify the root cause of your pain.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h4>Treatment Plan</h4>
-                    <p>Customized treatment plans using manual therapy, exercise, and education.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h4>Recovery & Empowerment</h4>
-                    <p>Empowering you with knowledge and tools to maintain long-term mobility.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About/Testimonial Section -->
-    <section id="about" class="about-section section-padding">
-        <div class="container about-grid">
-            <div class="about-text">
-                <h2>Your Path to Optimal Health Starts Here.</h2>
-                <p class="lead">At Optimal Motion, we believe that healing is a partnership. Our certified physiotherapists combine clinical expertise with compassionate care to get you back to the activities you love.</p>
-                <p>We don't just treat symptoms; we address the root cause so you can achieve lasting, sustainable results.</p>
-                <a href="#contact" class="btn btn-secondary">Meet Our Experts</a>
-            </div>
-            <div class="testimonial-card">
-                <p>"The team at Optimal Motion truly listened to my concerns. I was skeptical, but after just a few sessions, my knee pain was significantly better. Highly recommend!"</p>
-                <p class="source">- Sarah M., Happy Patient</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer/CTA -->
     <footer id="contact" class="footer-section section-padding">
         <div class="container">
-            <h2>Ready to move better?</h2>
-            <p class="subtitle">Schedule your free initial consultation and start your journey to recovery.</p>
-            <a href="tel:5551234567" class="btn btn-primary btn-large">📞 Call Us Today: (555) 123-4567</a>
-            <div class="footer-links">
-                <p>&copy; 2026 Optimal Motion Therapy. All Rights Reserved.</p>
-                <p>123 Health St, City, State | Email: info@optimalmotion.com</p>
+            <div class="footer-subsection footer-cta">
+                <img src="{{ url_for('static', filename='images/brand-logo-solid.png') }}" style="height:128px; align-self: center;" />
+                <h2>Ready to move better?</h2>
+                <p class="subtitle">Book an appointment online or call us.</p>
+                <a class="btn btn-primary btn-large">📅 Book Appointment</a>
+                <a href="tel:0451798814" class="btn btn-primary btn-large">📞 Call 0451 798 814</a>
+                <p class="subtitle">Or send us an email.</p>
+                <a href="mailto:info@kennethphysio.com" class="btn btn-primary btn-large">📧 info@kennethphysio.com</a>
             </div>
+            <div class="footer-subsection">
+                <h3>Our Services</h3>
+                <div style="display:flex; flex-direction:column; gap:1vh;">
+                    <div>Aged Care Physiotherapy</div>
+                    <div>DVA (Gold and White Cards)</div>
+                    <div>NDIS</div>
+                    <div>Private Clients</div>
+                    <div>Fall Prevention</div>
+                    <div>Balance Training</div>
+                    <div>Pre/Post Operative Physiotherapy</div>
+                    <div>Strength, Mobility and Functional Capacity Building</div>
+                </div>
+            </div>
+            <div class="footer-subsection">
+                <h3>Quick Links</h3>
+                <div>About Us</div>
+                <div>Funding Pathways</div>
+                <div>FAQs</div>
+                <div>Making a Referral</div>
+                <div>Contact</div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p>&copy; 2026 Kenneth Mobile Physiotherapy. All Rights Reserved.</p>
+            <p>Sydney 2000, NSW, Australia | Email: info@optimalmotion.com</p>
         </div>
     </footer>
 </body>
