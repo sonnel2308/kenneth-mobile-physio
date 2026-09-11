@@ -2,7 +2,7 @@
 <nav class="navbar">
     <div class="container">
         <div class="logo">
-            <img src="{{ url_for('static', filename='images/brand-logo.png') }}" style="height:64px" />
+            <img src="{{ url_for('static', filename='images/brand-logo.png') }}" />
         </div>
         <div class="nav-contact">
             <p>📞 0451 798 814</p>
@@ -13,8 +13,23 @@
             <li><a href="/">Home</a></li>
             <li><a href="/">About Us</a></li>
             <li><a href="/">Services</a></li>
-            <li><a href="/">Funding Pathways</a></li>
-            <li><a href="/">FAQs</a></li>
+            <li>
+                <a href="/">Funding Pathways</a>
+                <div class="dropdown-content">
+                    <div>Aged Care</div>
+                    <div>NDIS</div>
+                    <div>DVA (Gold and White Cards)</div>
+                    <div>Private Clients</div>
+                </div>
+            </li>
+            <li>
+                <a href="/">FAQs</a>
+                <div class="dropdown-content">
+                    <div>test 1</div>
+                    <div>test 2</div>
+                    <div>test 3</div>
+                </div>
+            </li>
             <li><a href="/">Making a Referral</a></li>
             <li><a href="/">Contact</a></li>
             <li><a href="/booking" class="cta-button-nav">Book Appointment</a></li>
