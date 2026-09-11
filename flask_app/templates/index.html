@@ -80,45 +80,7 @@
         </div>
     </section>
 
-    <footer id="contact" class="footer-section section-padding">
-        <div class="container">
-            <div class="footer-subsection footer-cta">
-                <img src="{{ url_for('static', filename='images/brand-logo-solid.png') }}" style="height:128px; align-self: center;" />
-                <h2 class="mt-4">Ready to move better?</h2>
-                <p class="subtitle">Schedule your consultation today.</p>
-                
-                <a href="#booking-form-container" class="btn btn-primary btn-large mb-3">📅 Book Appointment</a>
-                <div class="contact-details mt-4">
-                    <p class="mb-2"><i class="icon">📞</i> Call us: <a href="tel:0451798814" class="text-decoration-none text-primary">0451 798 814</a></p>
-                    <p><i class="icon">📧</i> Email us: <a href="mailto:info@kennethphysio.com" class="text-decoration-none text-primary">info@kennethphysio.com</a></p>
-                </div>
-            </div>
-            <div class="footer-subsection">
-                <h3>Our Services</h3>
-                <div style="display:flex; flex-direction:column; gap:1vh;">
-                    <div>Aged Care Physiotherapy</div>
-                    <div>DVA (Gold and White Cards)</div>
-                    <div>NDIS</div>
-                    <div>Private Clients</div>
-                    <div>Fall Prevention</div>
-                    <div>Balance Training</div>
-                    <div>Pre/Post Operative Physiotherapy</div>
-                    <div>Strength, Mobility and Functional Capacity Building</div>
-                </div>
-            </div>
-            <div class="footer-subsection">
-                <h3>Quick Links</h3>
-                <div>About Us</div>
-                <div>Funding Pathways</div>
-                <div>FAQs</div>
-                <div>Making a Referral</div>
-                <div>Contact</div>
-            </div>
-        </div>
-        <div class="footer-links">
-            <p>&copy; 2026 Kenneth Mobile Physiotherapy. All Rights Reserved.</p>
-            <p>Sydney 2000, NSW, Australia | Email: info@optimalmotion.com</p>
-        </div>
-    </footer>
+    {% include 'components/footer.html' %}
+
 </body>
 </html>

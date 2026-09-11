@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <section class="about-section section-padding">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h1>About Kenneth Mobile Physiotherapy</h1>
+                    <p class="lead">Bringing professional physiotherapy to you, wherever you are.</p>
+                    
+                    <h2>Our Mission</h2>
+                    <p>We are dedicated to providing accessible, high-quality physiotherapy services that help people of all ages maintain their mobility, independence, and quality of life. Our mobile service brings expert care directly to your home, hospital, or care facility, removing barriers to treatment and making rehabilitation accessible to everyone.</p>
+                    
+                    <h2>Our Team</h2>
+                    <p>Our team consists of highly qualified and experienced physiotherapists who are passionate about helping you achieve your health and mobility goals. We believe in a person-centred approach, treating you as an individual with unique needs and goals.</p>
+                    
+                    <h2>Why Choose Us</h2>
+                    <ul>
+                        <li><strong>Convenience:</strong> We come to you, eliminating the need to travel for treatment</li>
+                        <li><strong>Expertise:</strong> Qualified physiotherapists with comprehensive knowledge</li>
+                        <li><strong>Personalised Care:</strong> Tailored treatment plans that meet your specific needs</li>
+                        <li><strong>Flexible Scheduling:</strong> Appointments that work around your lifestyle</li>
+                        <li><strong>Comprehensive Services:</strong> From aged care to NDIS, DVA, and private clients</li>
+                    </ul>
+                    
+                    <h2>Our Values</h2>
+                    <p>We are committed to integrity, compassion, and excellence in every interaction. We believe that everyone deserves access to quality healthcare, regardless of their mobility challenges or circumstances.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+
+</body>
+</html>

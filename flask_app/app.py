@@ -17,6 +17,11 @@ def booking_page():
     """Renders the dedicated appointment booking page."""
     return render_template('booking.html', title='Book Appointment')
 
+@app.route('/about', methods=['GET'])
+def about_page():
+    """Renders the about us page."""
+    return render_template('about.html', title='About Us')
+
 @app.route('/book-appointment', methods=['POST'])
 def book_appointment():
     """Handles the form submission for booking."""
