@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    service_coverage_images_path = STATIC_IMAGES_PATH / "service_coverage"
+    service_coverage_images_path = STATIC_IMAGES_PATH / "affiliations"
     service_coverage_images = os.listdir(service_coverage_images_path)
     return render_template('index.html', title='Home Page', service_coverage_images=service_coverage_images)
 

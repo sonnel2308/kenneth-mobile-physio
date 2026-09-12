@@ -1,84 +1,63 @@
-/* 
- * Booking Page Stylesheet 
- * Designed to be consistent with general styles.css
- */
-
-/* --- Booking Page Specific Styling --- */
-
-/* Booking Form Card Styling */
-.form-card {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* BOOKING PAGE STYLES */
+.booking-section {
     max-width: 600px;
     margin: 0 auto;
 }
 
-.form-card h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+.form-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.form-card p {
-    color: #7f8c8d;
-    margin-bottom: 30px;
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Form Group Styling */
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
     font-weight: 600;
-    color: #34495e;
+    color: var(--color-dark);
 }
 
-.form-group .required {
-    color: #e74c3c;
+.required {
+    color: red;
 }
 
 .form-control {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
     transition: border-color 0.3s;
 }
 
 .form-control:focus {
-    border-color: #3498db;
     outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(80, 148, 159, 0.2);
 }
 
-/* Button Styling Consistency */
-.btn-large {
-    padding: 12px 30px !important;
-    font-size: 1.1em !important;
+.text-center {
+    text-align: center;
 }
 
-/* Disclaimer */
-.disclaimer {
-    font-size: 0.9em;
-    color: #95a5a6;
-    margin-top: 20px !important;
+.mb-4 {
+    margin-bottom: 20px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .booking-hero {
-        padding: 80px 20px;
-    }
-    .booking-hero h1 {
-        font-size: 2.5em;
-    }
-    .form-card {
-        padding: 30px 20px;
-    }
+.mb-5 {
+    margin-bottom: 25px;
+}
+
+.mt-4 {
+    margin-top: 20px;
 }

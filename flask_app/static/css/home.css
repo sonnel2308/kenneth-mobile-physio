@@ -1,0 +1,167 @@
+/* 2. HERO SECTION */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/images/stock-photo.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.disclaimer {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+/* 3. SERVICES SECTION */
+.services-section {
+    text-align: center;
+}
+
+.services-section h2 {
+    font-size: 2.2rem;
+    color: var(--color-dark);
+}
+
+.services-description {
+    margin: 2vh 0 5vh 0;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-card {
+    flex: 0 0 15vw;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    min-width: 5vw;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+
+/* Slider */
+.slider {
+    overflow: hidden;
+    width: 100%;
+    min-height: 30vh;
+}
+
+.slider h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--color-dark);
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: slide 20s linear infinite;
+}
+
+.track img {
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1280px) {
+    .service-grid, .process-content, .about-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-contact {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .service-card, .step {
+        padding: 20px;
+    }
+
+    .navbar {
+        height: auto;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .btn-large {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}

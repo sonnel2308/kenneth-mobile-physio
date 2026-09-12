@@ -1,0 +1,48 @@
+/* 6. FOOTER/CTA */
+.footer-section {
+    text-align: center;
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+.footer-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section .btn {
+    width: 20vw;
+    margin: 1vh 1vw;
+    overflow-wrap: break-word;
+}
+
+.footer-section .subtitle {
+    font-size: 1.1rem;
+}
+
+.footer-section .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-subsection {
+    border-left: 2px solid var(--color-primary);
+    padding: 0 1vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-cta {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
