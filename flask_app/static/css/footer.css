@@ -46,3 +46,13 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 0.9rem;
 }
+
+.footer-section a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-section a:hover {
+    color: var(--color-secondary);
+    text-decoration: none;
+}

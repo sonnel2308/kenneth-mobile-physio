@@ -36,6 +36,35 @@
                         <input type="email" id="email" name="email" class="form-control" required placeholder="you@example.com">
                     </div>
                     
+                    <div class="form-group">
+                        <label for="postcode">Postcode <span class="required">*</span></label>
+                        <input type="text" id="postcode" name="postcode" class="form-control" required placeholder="e.g. 2000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="relationship">Relationship to Service Recipient <span class="required">*</span></label>
+                        <select id="relationship" name="relationship" class="form-control" required>
+                            <option value="" disabled selected>Select your relationship</option>
+                            <option value="myself">For myself</option>
+                            <option value="family_member">Family member</option>
+                            <option value="friend">Friend</option>
+                            <option value="allied_community_health">Allied community health professional</option>
+                            <option value="general_practitioner">General practitioner</option>
+                            <option value="support_at_home_package_manager">Support at home package manager</option>
+                            <option value="ndis_planner_support_coordinator">NDIS planner - support coordinator</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Preferred Visit Time <span class="required">*</span></label>
+                        <select id="time" name="time" class="form-control" required>
+                            <option value="" disabled selected>Select your preferred time</option>
+                            <option value="morning">Morning (9am - 12pm)</option>
+                            <option value="afternoon">Afternoon (1pm - 5pm)</option>
+                        </select>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary btn-large mt-4">Submit Booking Request</button>
                     
                     <p class="disclaimer mt-4">We respect your privacy. Your details will only be used for booking purposes.</p>

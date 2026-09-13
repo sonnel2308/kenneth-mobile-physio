@@ -1,7 +1,9 @@
 /* BOOKING PAGE STYLES */
 .booking-section {
-    max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-card {
@@ -9,6 +11,7 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 50vw;
 }
 
 .booking-form {

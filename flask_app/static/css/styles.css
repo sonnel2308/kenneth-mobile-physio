@@ -20,6 +20,11 @@ body {
     color: var(--color-dark);
 }
 
+a {
+    all: unset;
+    cursor: pointer;
+}
+
 .container {
     margin: 0 8vw;
 }
