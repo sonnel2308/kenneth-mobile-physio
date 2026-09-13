@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making a Referral | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <!-- Referral Form Section -->
+    <section id="referral-form-container" class="booking-section section-padding">
+        <div class="container">
+            <div class="form-card">
+                <h2 class="text-center mb-4">Make a Referral</h2>
+                <p class="text-center mb-5">Please complete the form below to refer a client for physiotherapy services.</p>
+                
+                <!-- Form structure -->
+                <form action="/make-referral" method="POST" class="booking-form">
+                    <!-- Client Information Section -->
+                    <div class="section-title">Client Information</div>
+                    
+                    <div class="form-group">
+                        <label for="client_full_name">Client Full Name <span class="required">*</span></label>
+                        <input type="text" id="client_full_name" name="client_full_name" class="form-control" required placeholder="Enter client's full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client_phone_number">Client Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="client_phone_number" name="client_phone_number" class="form-control" required placeholder="(04) XXX XXX XXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client_email">Client Email Address <span class="required">*</span></label>
+                        <input type="email" id="client_email" name="client_email" class="form-control" required placeholder="client@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client_address">Client Address - Suburb - Postcode <span class="required">*</span></label>
+                        <input type="text" id="client_address" name="client_address" class="form-control" required placeholder="123 Example Street, Suburb, Postcode">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="client_dob">Client Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="client_dob" name="client_dob" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="funding_type">Funding Type <span class="required">*</span></label>
+                        <select id="funding_type" name="funding_type" class="form-control" required>
+                            <option value="" disabled selected>Select funding type</option>
+                            <option value="support_at_home">Support at Home</option>
+                            <option value="ndis">NDIS</option>
+                            <option value="dva">DVA (Gold and White Cards)</option>
+                            <option value="private_physio">Private Physiotherapy</option>
+                            <option value="medicare">Medicare</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Referrer Information Section -->
+                    <div class="section-title">Referrer Information</div>
+                    
+                    <div class="form-group">
+                        <label for="referrer_full_name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="referrer_full_name" name="referrer_full_name" class="form-control" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="referrer_phone_number">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="referrer_phone_number" name="referrer_phone_number" class="form-control" required placeholder="(04) XXX XXX XXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="referrer_email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="referrer_email" name="referrer_email" class="form-control" required placeholder="referrer@example.com">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large mt-4">Submit Referral Request</button>
+                    
+                    <p class="disclaimer mt-4">We respect your privacy. All information will be kept confidential and used solely for referral purposes.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+    <script>
+        // Simple script to handle the CTA button on the nav bar when on the referral page
+        document.querySelector('.cta-button-nav').setAttribute('href', '/booking');
+    </script>
+</body>
+</html>

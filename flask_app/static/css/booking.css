@@ -64,3 +64,12 @@
 .mt-4 {
     margin-top: 20px;
 }
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}

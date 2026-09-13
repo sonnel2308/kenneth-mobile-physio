@@ -22,6 +22,11 @@ def about_page():
     """Renders the about us page."""
     return render_template('about.html', title='About Us')
 
+@app.route('/referral', methods=['GET'])
+def referral_page():
+    """Renders the referral form page."""
+    return render_template('making-a-referral.html', title='Making a Referral')
+
 @app.route('/book-appointment', methods=['POST'])
 def book_appointment():
     """Handles the form submission for booking."""
