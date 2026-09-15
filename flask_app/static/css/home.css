@@ -52,7 +52,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s;
-    min-width: 5vw;
 }
 
 .service-card:hover {
@@ -61,7 +60,7 @@
     cursor: pointer;
 }
 
-.service-card .icon {
+.service-card .service-icon {
     font-size: 3rem;
     display: block;
     margin-bottom: 15px;

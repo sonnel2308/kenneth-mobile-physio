@@ -1,15 +1,25 @@
+{% import 'macros.html' as components %}
 <footer class="footer-section section-padding">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <div class="container">
         <div class="footer-subsection footer-cta">
             <img src="{{ url_for('static', filename='images/brand-logo-solid.png') }}" style="height:128px; align-self: center;" />
-            <h2 class="mt-4">Ready to move better?</h2>
+            <h2>Ready to move better?</h2>
             <p class="subtitle">Schedule your consultation today.</p>
             
-            <a href="#booking-form-container" class="btn btn-primary btn-large mb-3">📅 Book Appointment</a>
-            <div class="contact-details mt-4">
-                <p class="mb-2"><i class="icon">📞</i> Call us: <a href="tel:0451798814" class="text-decoration-none text-primary">0451 798 814</a></p>
-                <p><i class="icon">📧</i> Email us: <a href="mailto:info@kennethphysio.com" class="text-decoration-none text-primary">info@kennethphysio.com</a></p>
+            <a href="#booking-form-container" class="btn btn-primary btn-large">
+                {{ components.icon('calendar', light_mode=True) }}
+                Book Home Visit
+            </a>
+            <div class="contact-details">
+                <p>
+                    {{ components.icon('phone', light_mode=True) }}
+                    Call us: <a href="tel:0451798814" class="text-decoration-none text-primary">0451 798 814</a>
+                </p>
+                <p>
+                    {{ components.icon('email', light_mode=True) }}
+                    Email us: <a href="mailto:info@kennethphysio.com" class="text-decoration-none text-primary">info@kennethphysio.com</a>
+                </p>
             </div>
         </div>
         <div class="footer-subsection">
