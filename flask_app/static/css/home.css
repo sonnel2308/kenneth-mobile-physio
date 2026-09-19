@@ -1,4 +1,4 @@
-/* 2. HERO SECTION */
+/* HERO SECTION */
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/images/hero-section-background.png');
     background-size: cover;
@@ -30,7 +30,7 @@
     opacity: 0.8;
 }
 
-/* 3. SERVICES SECTION */
+/* SERVICES SECTION */
 .services-section {
     text-align: center;
 }
@@ -77,28 +77,25 @@
     font-size: 1.4rem;
 }
 
-
-
-
-
-
-/* Slider */
+/* SLIDER */
 .slider {
     overflow: hidden;
     width: 100%;
-    min-height: 30vh;
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
 }
 
 .track {
     display: flex;
     width: max-content;
-    animation: slide 20s linear infinite;
+    animation: slide 30s linear infinite;
 }
 
 .track img {
     height: 150px;
     object-fit: cover;
-    margin-right: 20px;
+    margin: 0 2vw;
 }
 
 @keyframes slide {
