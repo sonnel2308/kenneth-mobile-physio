@@ -22,6 +22,16 @@ def about_page():
     """Renders the about us page."""
     return render_template('about.html', title='About Us')
 
+@app.route('/services', methods=['GET'])
+def services_page():
+    """Renders the services page."""
+    return render_template('services.html', title='Our Services')
+
+@app.route('/faqs', methods=['GET'])
+def faqs_page():
+    """Renders the FAQs page."""
+    return render_template('faqs.html', title='FAQs')
+
 @app.route('/referral', methods=['GET'])
 def referral_page():
     """Renders the referral form page."""

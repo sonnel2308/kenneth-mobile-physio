@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/faqs.js') }}"></script>
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <section class="faqs-hero">
+        <div class="container faqs-hero-content">
+            <h1>Frequently Asked Questions</h1>
+            <p class="subtitle">Find answers to common questions about our services</p>
+        </div>
+    </section>
+
+    <section class="faqs-section section-padding">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; font-weight: 600; text-align: center; margin-bottom: 2rem; color: var(--color-dark);">
+                Questions & Answers
+            </h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Is mobile physiotherapy covered by my insurance?</div>
+                    <div class="faq-answer">
+                        <p>Yes, we accept most major health insurance providers including Bupa, Medibank, HCF, and more. For DVA Gold and White Card holders, our services are fully covered. NDIS participants can also access our services through their plan. Please contact us to discuss your specific insurance situation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How soon can I book an appointment?</div>
+                    <div class="faq-answer">
+                        <p>We strive to accommodate same-day appointments when possible, depending on our schedule. For planned visits, we typically have appointments available within 1-2 weeks. Please call us at 0451 798 814 to check availability and book your preferred time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do I need to do anything to prepare for a home visit?</div>
+                    <div class="faq-answer">
+                        <p>Simple preparation makes your visit more effective. We recommend having a clear space for your treatment, wearing comfortable clothing, and having any relevant medical documents or referral forms ready. Our therapist will guide you through any specific preparations needed for your condition.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How many sessions will I need?</div>
+                    <div class="faq-answer">
+                        <p>The number of sessions varies depending on your condition and treatment goals. Some acute injuries may require 4-6 sessions, while chronic conditions may need ongoing management. Your physiotherapist will develop a treatment plan and provide you with a clear roadmap for your recovery journey.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can you travel anywhere in Sydney?</div>
+                    <div class="faq-answer">
+                        <p>We service all of Sydney and surrounding areas, including inner city, suburbs, and outer regions. Our mobile service can reach you wherever you are located. Please contact us to confirm coverage for your specific area.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Will I need a referral to access physiotherapy?</div>
+                    <div class="faq-answer">
+                        <p>For private patients and aged care clients, a referral is not required. For NDIS participants and DVA card holders, a referral may be needed depending on your funding approval. For Medicare rebates, a GP referral is required. We can advise you on the specific requirements for your situation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>
