@@ -3,6 +3,7 @@
     --color-primary: #50949f;
     --color-secondary: #293a70;
     --color-tertiary: #40767F;
+    --color-accent: #F4D35E;
     --color-dark: #333;
     --color-light: #f8f9fa;
     --color-text-muted: #6c757d;
@@ -30,7 +31,7 @@ a {
 }
 
 .section-padding {
-    padding: 80px 0;
+    padding: 5vh 0;
 }
 
 .bg-light {
@@ -57,7 +58,8 @@ a {
 }
 
 .btn-primary:hover {
-    background-color: #506D9F;
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
     transform: translateY(-2px);
 }
 

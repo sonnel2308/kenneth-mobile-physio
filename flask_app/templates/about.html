@@ -7,58 +7,163 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     {% include 'components/navbar.html' %}
 
-    <section class="about-section hero-section">
-        <div class="container hero-content">
-            <h1>About Kenneth Mobile Physiotherapy</h1>
-            <p class="subtitle">Expert, compassionate physiotherapy that comes to you</p>
+    <section class="section-padding about-section" id="our-story">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    🏥
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>
+                        At Kenneth Mobile Physiotherapy, we believe that quality healthcare shouldn't require you to leave the comfort of your home. What started as a simple idea—bringing expert physiotherapy directly to those who need it most—has grown into a trusted service for patients across the region.
+                    </p>
+                    <p>
+                        Our mission has always been to make physiotherapy accessible, convenient, and effective. We understand that mobility challenges can impact every aspect of daily life, and we're committed to helping you regain independence and confidence in your own space.
+                    </p>
+                    <p>
+                        Whether you're recovering from surgery, managing chronic pain, or looking to improve your overall mobility, our dedicated team is here to support you every step of the way.
+                    </p>
+                    <div class="about-cta">
+                        <a href="/booking" class="btn btn-primary">Book an Appointment</a>
+                        <a href="/contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="about-content-section section-padding">
-        <div class="container">
-            <div class="about-text">
-                <h2>Our Mission</h2>
-                <p>We are dedicated to providing accessible, high-quality physiotherapy services that help people of all ages maintain their mobility, independence, and quality of life. Our mobile service brings expert care directly to your home, hospital, or care facility, removing barriers to treatment and making rehabilitation accessible to everyone.</p>
-                
+    <section class="section-padding about-section">
+        <div class="container about-content">
+            <div class="text-center">
+                <h2>Our Core Values</h2>
+                <p>
+                    These principles guide everything we do and how we treat every patient.
+                </p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div>❤️</div>
+                    <h3>Compassionate Care</h3>
+                    <p>We treat every patient with empathy, understanding, and respect, creating a supportive environment for recovery.</p>
+                </div>
+                <div class="service-card">
+                    <div>🎓</div>
+                    <h3>Expertise</h3>
+                    <p>Our team brings years of experience and ongoing professional development to ensure the highest quality care.</p>
+                </div>
+                <div class="service-card">
+                    <div>🤝</div>
+                    <h3>Personalised Approach</h3>
+                    <p>Every treatment plan is tailored to your unique needs, goals, and lifestyle for the best outcomes.</p>
+                </div>
+                <div class="service-card">
+                    <div>✨</div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every interaction, ensuring exceptional service from your first visit onwards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding about-section" id="our-team">
+        <div class="container about-content">
+            <div class="text-center">
                 <h2>Our Team</h2>
-                <p>Our team consists of highly qualified and experienced physiotherapists who are passionate about helping you achieve your health and mobility goals. We believe in a person-centred approach, treating you as an individual with unique needs and goals.</p>
-                
-                <h2>Why Choose Us</h2>
-                <div class="about-features">
-                    <div class="feature">
-                        <h3>📍 Convenience</h3>
-                        <p>We come to you, eliminating the need to travel for treatment</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🎓 Expertise</h3>
-                        <p>Qualified physiotherapists with comprehensive knowledge</p>
-                    </div>
-                    <div class="feature">
-                        <h3>❤️ Personalised Care</h3>
-                        <p>Tailored treatment plans that meet your specific needs</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🕐 Flexible Scheduling</h3>
-                        <p>Appointments that work around your lifestyle</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🤝 Comprehensive Services</h3>
-                        <p>From aged care to NDIS, DVA, and private clients</p>
+                <p>
+                    Meet the dedicated professionals who make your recovery possible.
+                </p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card team-icon">
+                    <div>👩‍⚕️</div>
+                    <h3>Senior Physiotherapists</h3>
+                    <p>Highly qualified and experienced clinicians specialising in a wide range of rehabilitation needs.</p>
+                </div>
+                <div class="service-card team-icon">
+                    <div>📚</div>
+                    <h3>Continuous Learning</h3>
+                    <p>Our team stays ahead of the latest research and best practices in physiotherapy.</p>
+                </div>
+                <div class="service-card team-icon">
+                    <div>🎯</div>
+                    <h3>Goal-Oriented Care</h3>
+                    <p>We work alongside you to achieve your personal mobility and wellness goals.</p>
+                </div>
+                <div class="service-card team-icon">
+                    <div>💬</div>
+                    <h3>Open Communication</h3>
+                    <p>We believe in transparent, honest conversations about your treatment and progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding about-section" id="why-choose-us">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--color-dark);">Why Choose Kenneth Mobile Physiotherapy?</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 20px;">
+                        We understand that finding the right physiotherapy service is important. Here's what sets us apart and why our patients trust us with their recovery journey.
+                    </p>
+                    
+                    <div class="about-features" style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="feature" style="display: flex; gap: 15px;">
+                            <div style="font-size: 2rem; min-width: 50px; display: flex; align-items: center; justify-content: center;">📍</div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--color-dark);">Convenience</h3>
+                                <p style="font-size: 1rem; color: var(--color-text-muted);">We come to you, eliminating the need to travel for treatment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" style="display: flex; gap: 15px;">
+                            <div style="font-size: 2rem; min-width: 50px; display: flex; align-items: center; justify-content: center;">🎓</div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--color-dark);">Expertise</h3>
+                                <p style="font-size: 1rem; color: var(--color-text-muted);">Qualified physiotherapists with comprehensive knowledge</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" style="display: flex; gap: 15px;">
+                            <div style="font-size: 2rem; min-width: 50px; display: flex; align-items: center; justify-content: center;">❤️</div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--color-dark);">Personalised Care</h3>
+                                <p style="font-size: 1rem; color: var(--color-text-muted);">Tailored treatment plans that meet your specific needs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" style="display: flex; gap: 15px;">
+                            <div style="font-size: 2rem; min-width: 50px; display: flex; align-items: center; justify-content: center;">🕐</div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--color-dark);">Flexible Scheduling</h3>
+                                <p style="font-size: 1rem; color: var(--color-text-muted);">Appointments that work around your lifestyle</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature" style="display: flex; gap: 15px;">
+                            <div style="font-size: 2rem; min-width: 50px; display: flex; align-items: center; justify-content: center;">🤝</div>
+                            <div>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: var(--color-dark);">Comprehensive Services</h3>
+                                <p style="font-size: 1rem; color: var(--color-text-muted);">From aged care to NDIS, DVA, and private clients</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <h2>Our Values</h2>
-                <p>We are committed to integrity, compassion, and excellence in every interaction. We believe that everyone deserves access to quality healthcare, regardless of their mobility challenges or circumstances.</p>
+                <div class="about-image">
+                    🚗
+                </div>
             </div>
         </div>
     </section>
 
     {% include 'components/footer.html' %}
-
 </body>
 </html>

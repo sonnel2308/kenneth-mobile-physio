@@ -52,6 +52,7 @@
 }
 
 .service-card {
+    text-align: center;
     flex: 0 0 15vw;
     padding: 30px;
     border-radius: 10px;

@@ -49,10 +49,9 @@
 
 .footer-section a {
     color: white;
-    text-decoration: underline;
 }
 
 .footer-section a:hover {
-    color: var(--color-secondary);
+    color: var(--color-accent);
     text-decoration: none;
 }
