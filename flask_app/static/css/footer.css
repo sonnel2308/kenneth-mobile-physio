@@ -39,6 +39,10 @@
     align-items: center;
 }
 
+.footer-cta .btn-primary:hover {
+    color: var(--color-secondary);
+}
+
 .footer-links {
     margin-top: 50px;
     padding-top: 20px;
@@ -48,11 +52,13 @@
 
 .footer-section a {
     color: white;
+    transition: all 0.3s;
 }
 
 .footer-section a:hover {
     color: var(--color-accent);
-    text-decoration: none;
+    transform: translateY(-2px);
+    display: inline-block;
 }
 
 .footer-services {
