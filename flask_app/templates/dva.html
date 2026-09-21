@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVA (Gold and White Cards) | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <section class="section-padding services-section">
+        <div class="container">
+            <div class="services-description">
+                <h1>DVA Gold and White Card</h1>
+                <p>
+                    We provide DVA (Department of Veterans' Affairs) funded physiotherapy services to Australian Defence Force veterans, reservists, and family members who hold a Gold or White DVA Health Card.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⭐</div>
+                    <h3>Gold Card Holders</h3>
+                    <p>
+                        Gold card holders receive full DVA support for their healthcare needs. We can bill directly to DVA for eligible physiotherapy services covered under your DVA Gold Card.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⭐</div>
+                    <h3>White Card Holders</h3>
+                    <p>
+                        White card holders have access to DVA healthcare services with some co-payment requirements. We can assist with billing and provide information on your co-payment obligations.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎖️</div>
+                    <h3>Veterans' Services</h3>
+                    <p>
+                        We understand the unique health needs of veterans and provide compassionate, respectful care with sensitivity to military service experiences.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔗</div>
+                    <h3>Direct Billing</h3>
+                    <p>
+                        For eligible services, we can provide direct billing to DVA, simplifying the payment process for card holders.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    🇦🇺
+                </div>
+                <div class="about-text">
+                    <h2>DVA Card Types and Benefits</h2>
+                    <p>
+                        Understanding your DVA card type is important for accessing the right support:
+                    </p>
+                    <ul class="about-list">
+                        <li><strong>Gold Card:</strong> Full coverage for most healthcare services including physiotherapy</li>
+                        <li><strong>White Card:</strong> Coverage with co-payment for some services</li>
+                        <li><strong>Services available:</strong> Physiotherapy, allied health, medical appointments</li>
+                        <li><strong>Eligibility:</strong> Australian Defence Force veterans, reservists, and eligible family members</li>
+                    </ul>
+                    <p>
+                        If you're not sure about your DVA card status or coverage, we can help you verify your eligibility and guide you through the process.
+                    </p>
+                    <div class="about-cta">
+                        <a href="/booking" class="btn btn-primary">Book an Appointment</a>
+                        <a href="/contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Contact Us for DVA Information</h2>
+                <p>
+                    We're here to help with DVA billing, eligibility, and service coordination.
+                </p>
+                <div class="contact-info">
+                    <p><img src="{{ url_for('static', filename='images/icons/phone.svg') }}" alt="Phone" class="icon"> 0451 798 814</p>
+                    <p><img src="{{ url_for('static', filename='images/icons/email.svg') }}" alt="Email" class="icon"> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>

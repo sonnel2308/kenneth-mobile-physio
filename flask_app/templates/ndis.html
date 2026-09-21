@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDIS Funding | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <section class="section-padding services-section">
+        <div class="container">
+            <div class="services-description">
+                <h1>NDIS Funding</h1>
+                <p>
+                    We provide NDIS-registered physiotherapy services for eligible participants, focusing on building capacity, improving mobility, and supporting goal-directed outcomes within the NDIS framework.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>NDIS Registration</h3>
+                    <p>
+                        Kenneth Mobile Physiotherapy is registered with the NDIS Provider Register, allowing us to deliver funded physiotherapy services to eligible NDIS participants.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Goal-Supported Plans</h3>
+                    <p>
+                        Our physiotherapy services align with your NDIS plan goals, focusing on improving mobility, independence, and functional outcomes.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3>Capacity Building</h3>
+                    <p>
+                        We provide capacity building supports that help you develop skills and confidence to manage your goals and daily activities.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📄</div>
+                    <h3>Invoicing & Claims</h3>
+                    <p>
+                        We handle all NDIS billing and claims processing, ensuring smooth and timely payment for your services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    🦾
+                </div>
+                <div class="about-text">
+                    <h2>Our NDIS Services</h2>
+                    <p>
+                        As NDIS-registered providers, we deliver a comprehensive range of physiotherapy services including:
+                    </p>
+                    <ul class="about-list">
+                        <li>Assessment and goal setting</li>
+                        <li>Manual therapy and joint mobilization</li>
+                        <li>Strengthening and conditioning programs</li>
+                        <li>Balance and fall prevention</li>
+                        <li>Assistive device prescription and training</li>
+                        <li>Home exercise programs</li>
+                        <li>Education for participants and families</li>
+                    </ul>
+                    <p>
+                        We work within the NDIS price guide framework and can provide detailed pricing information upon request.
+                    </p>
+                    <div class="about-cta">
+                        <a href="/booking" class="btn btn-primary">Book an Appointment</a>
+                        <a href="/contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Contact Us for NDIS Information</h2>
+                <p>
+                    We're here to help with NDIS funding, registration, and service coordination.
+                </p>
+                <div class="contact-info">
+                    <p><img src="{{ url_for('static', filename='images/icons/phone.svg') }}" alt="Phone" class="icon"> 0451 798 814</p>
+                    <p><img src="{{ url_for('static', filename='images/icons/email.svg') }}" alt="Email" class="icon"> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>

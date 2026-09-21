@@ -59,5 +59,25 @@ def book_appointment():
                            success=True, 
                            name=full_name)
 
+@app.route('/funding-pathways/aged-care', methods=['GET'])
+def aged_care_page():
+    """Renders the aged care page."""
+    return render_template('aged-care.html', title='Aged Care Funding Pathway')
+
+@app.route('/funding-pathways/ndis', methods=['GET'])
+def ndis_page():
+    """Renders the NDIS page."""
+    return render_template('ndis.html', title='NDIS Funding Pathway')
+
+@app.route('/funding-pathways/dva', methods=['GET'])
+def dva_page():
+    """Renders the DVA page."""
+    return render_template('dva.html', title='DVA Funding Pathway')
+
+@app.route('/funding-pathways/private-clients', methods=['GET'])
+def private_clients_page():
+    """Renders the Private Clients page."""
+    return render_template('private-clients.html', title='Private Clients Funding Pathway')
+
 if __name__ == '__main__':
     app.run(debug=True)

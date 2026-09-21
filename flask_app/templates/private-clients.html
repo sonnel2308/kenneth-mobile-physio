@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Clients | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <section class="section-padding services-section">
+        <div class="container">
+            <div class="services-description">
+                <h1>Private Clients</h1>
+                <p>
+                    We offer comprehensive physiotherapy services for private paying clients who prefer to use their own funds for healthcare. Our private client services provide the same high-quality care as our funded programs, with flexible scheduling and personalized treatment plans.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Private Payment</h3>
+                    <p>
+                        Accept private payment for all physiotherapy services, offering flexible billing options and transparent pricing for your convenience.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📅</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>
+                        Book appointments that work around your schedule with our mobile service, eliminating travel time and fitting care into your lifestyle.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👨‍⚕️</div>
+                    <h3>Expert Care</h3>
+                    <p>
+                        Receive the same expert physiotherapy care from our qualified team, with no restrictions on treatment type or frequency.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Receipts & Claims</h3>
+                    <p>
+                        We provide itemized receipts for all private services, making it easy to claim through your private health insurance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    💎
+                </div>
+                <div class="about-text">
+                    <h2>Private Client Services</h2>
+                    <p>
+                        As a private paying client, you enjoy the flexibility to:
+                    </p>
+                    <ul class="about-list">
+                        <li>Choose your own treatment frequency and duration</li>
+                        <li>Access any physiotherapy service without referral requirements</li>
+                        <li>Claim through your private health insurance provider</li>
+                        <li>Receive personalized treatment plans tailored to your goals</li>
+                        <li>Book appointments at your preferred times</li>
+                        <li>Access our full range of therapeutic modalities</li>
+                    </ul>
+                    <p>
+                        We work with all major private health insurance providers and can provide information about claim processes. Simply bring your insurance card to your appointment, and we'll handle the rest.
+                    </p>
+                    <div class="about-cta">
+                        <a href="/booking" class="btn btn-primary">Book an Appointment</a>
+                        <a href="/contact" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Contact Us for Private Client Information</h2>
+                <p>
+                    We're here to help with private health insurance claims and service coordination.
+                </p>
+                <div class="contact-info">
+                    <p><img src="{{ url_for('static', filename='images/icons/phone.svg') }}" alt="Phone" class="icon"> 0451 798 814</p>
+                    <p><img src="{{ url_for('static', filename='images/icons/email.svg') }}" alt="Email" class="icon"> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>
