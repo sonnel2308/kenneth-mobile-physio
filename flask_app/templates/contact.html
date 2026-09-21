@@ -11,6 +11,7 @@
 </head>
 <body>
     {% include 'components/navbar.html' %}
+    {% import 'macros.html' as components %}
 
     <section class="contact-section section-padding bg-light">
         <div class="container">
@@ -20,23 +21,25 @@
                     <p>Reach out to us for appointments, questions about our services, or general inquiries. Our team typically responds within 24 hours during business days.</p>
                     
                     <div class="contact-card">
-                        <div class="contact-icon">📞</div>
-                        <div>
+                        <div class="contact-icon">{{ components.icon('phone', size='24px') }}</div>
+                        <div style="display: flex; flex-direction: column;">
                             <h3>Phone</h3>
-                            <p><a href="tel:0451798814" class="text-decoration-none">0451 798 814</a></p>
+                            <p><a href="tel:0451798814">0451 798 814</a></p>
                         </div>
                         <p class="text-muted">Monday-Friday 9am-5pm AEST</p>
                     </div>
 
                     <div class="contact-card">
-                        <div class="contact-icon">📧</div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:info@kennethphysio.com" class="text-decoration-none">info@kennethphysio.com</a></p>
+                        <div class="contact-icon">{{ components.icon('email') }}</div>
+                        <div style="display: flex; flex-direction: column;">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></p>
+                        </div>
                         <p class="text-muted">We typically respond within 24 hours</p>
                     </div>
 
                     <div class="contact-card">
-                        <div class="contact-icon">📍</div>
+                        <div class="contact-icon">{{ components.icon('location') }}</div>
                         <h3>Sydney Area</h3>
                         <p>Serving all of Sydney and surrounding regions</p>
                         <p class="text-muted">Inner city, suburbs, and outer areas</p>

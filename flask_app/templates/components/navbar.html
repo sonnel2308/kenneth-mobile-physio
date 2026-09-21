@@ -1,13 +1,15 @@
 <!-- Navigation Component -->
 <nav class="navbar">
+    {% import 'macros.html' as components %}
+
     <div class="container">
         <div class="logo">
             <img src="{{ url_for('static', filename='images/brand-logo.png') }}" />
         </div>
         <div class="nav-contact">
-            <p><img src="{{ url_for('static', filename='images/icons/phone.svg') }}" alt="Phone" class="icon"> 0451 798 814</p>
-            <p><img src="{{ url_for('static', filename='images/icons/email.svg') }}" alt="Email" class="icon"> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></p>
-            <p><img src="{{ url_for('static', filename='images/icons/clock.svg') }}" alt="Clock" class="icon"> Monday-Friday 9am-5pm</p>
+            <div class="nav-details"><span class="nav-icon">{{ components.icon('phone') }}</span> 0451 798 814</div>
+            <div class="nav-details"><span class="nav-icon">{{ components.icon('email') }}</span> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></div>
+            <div class="nav-details"><span class="nav-icon">{{ components.icon('clock') }}</span> Monday-Friday 9am-5pm</div>
         </div>
         <ul class="nav-links">
             <li><a href="/" class="nav-item nav-link">Home</a></li>
