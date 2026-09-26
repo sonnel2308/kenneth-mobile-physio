@@ -244,6 +244,7 @@
                         if (otherCard !== card) {
                             otherCard.setAttribute('data-accordion', 'false');
                             otherCard.querySelector('.service-card-content').setAttribute('aria-hidden', 'true');
+                            otherCard.querySelector('.read-more-btn').textContent = 'Read More';
                         }
                     });
 

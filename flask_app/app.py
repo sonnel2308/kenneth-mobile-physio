@@ -54,10 +54,12 @@ def book_appointment():
     print(f"Booking submission received: Name={full_name}, Phone={phone}, Email={email}")
     
     # Redirect back to the booking page to show success message or just stay on the page
-    return render_template('booking.html', 
-                           title='Booking Confirmed', 
-                           success=True, 
-                           name=full_name)
+    return render_template(
+        'booking.html', 
+        title='Booking Confirmed', 
+        success=True, 
+        name=full_name
+    )
 
 @app.route('/funding-pathways/aged-care', methods=['GET'])
 def aged_care_page():
