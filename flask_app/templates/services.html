@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/services.js') }}"></script>
 </head>
 <body>
     {% include 'components/navbar.html' %}
@@ -30,10 +31,10 @@
     <section class="services-section section-padding">
         <div class="container">
             <div class="services-grid">
-                <div class="service-card" data-accordion="false">
+                <div id="aged-care-physio" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">👵</div>
-                        <h3>Aged Care Physiotherapy</h3>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/aged-care.png')"></div>
+                        <h3>Aged Care Physiotherapy (Support at Home Program)</h3>
                         <p class="preview-text">
                             Physiotherapy can play an important role in helping you to maintain your mobility, independence and quality of life. Through personalised assessment and treatment in the comfort of your home, physiotherapy can help manage pain, improve strength and balance, reduce fall risk, and maintain your ability to perform everyday activities safely.
                         </p>
@@ -45,9 +46,9 @@
                     </div>
                     <button class="read-more-btn">Read More</button>
                 </div>
-                <div class="service-card" data-accordion="false">
+                <div id="physio-for-ndis" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">📰</div>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/physio-for-ndis.png')"></div>
                         <h3>Physiotherapy for NDIS Participants</h3>
                         <p class="preview-text">
                             Physiotherapy can support NDIS participants to improve their mobility, strength, independence and ability to participate in everyday activities. At Kenneth Mobile Physiotherapy, we provide personalised in-home physiotherapy based on each participant's individual needs, goals and functional capacity.
@@ -70,9 +71,9 @@
                     </div>
                     <button class="read-more-btn">Read More</button>
                 </div>
-                <div class="service-card" data-accordion="false">
+                <div id="fall-prevention-balance-training" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">👩‍🦽</div>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/fall-prevention-balance-training.jpg'); background-position: 0 -225px;"></div>
                         <h3>Falls prevention and Balance Training</h3>
                         <p class="preview-text">
                             Physiotherapy can help older adults improve their balance, strength and confidence while reducing their risk of falls. At Kenneth Mobile Physiotherapy, we provide personalised in-home assessment and exercise programs designed to help clients improve balance, strength and mobility, reduce falls risk, and walk and transfer more safely.
@@ -93,9 +94,9 @@
                     </div>
                     <button class="read-more-btn">Read More</button>
                 </div>
-                <div class="service-card" data-accordion="false">
+                <div id="post-joint-replacement" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">🐱</div>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/post-joint-replacement.jpg')"></div>
                         <h3>Physiotherapy After Joint Replacement</h3>
                         <p class="preview-text">
                             Physiotherapy plays an important role in helping you recover after joint replacement surgery. Kenneth Mobile Physiotherapy provides personalised in-home rehabilitation to help you regain movement, strength and confidence. Treatment may include improving joint movement and strength, walking and mobility retraining, managing pain and swelling, and building confidence with everyday activities.
@@ -116,9 +117,9 @@
                     </div>
                     <button class="read-more-btn">Read More</button>
                 </div>
-                <div class="service-card" data-accordion="false">
+                <div id="chronic-conditions" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">🦍</div>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/chronic-conditions.jpg')"></div>
                         <h3>Chronic Condition and Pain Management</h3>
                         <p class="preview-text">
                             Physiotherapy can assist people living with chronic health conditions to maintain mobility, strength and independence while managing the physical challenges associated with their condition. We also support people living with acute and persistent pain through hands-on treatment. The aim is to help clients better manage their pain, improve function and maintain independence in everyday life.
@@ -131,9 +132,9 @@
                     </div>
                     <button class="read-more-btn">Read More</button>
                 </div>
-                <div class="service-card" data-accordion="false">
+                <div id="mobility-aid-training" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">⚖</div>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/mobility-aid-training.jpg')"></div>
                         <h3>Mobility Aids & Training</h3>
                         <p class="preview-text">
                             The right mobility aid can make everyday movement safer, easier and more comfortable. Kenneth Mobile Physiotherapy can assess your mobility needs and provide advice on suitable aids including walking frames and walkers, walking sticks, crutches and other mobility equipment, and safe and correct use of mobility aids.
@@ -154,9 +155,9 @@
                     </div>
                     <button class="read-more-btn">Read More</button>
                 </div>
-                <div class="service-card" data-accordion="false">
+                <div id="neurological-physio" class="service-card" data-accordion="false">
                     <div class="service-card-preview">
-                        <div class="service-icon">👩‍⚕️</div>
+                        <div class="service-card-image" style="--card-image: url('/static/images/service-cards/neurological-physio.jpg')"></div>
                         <h3>Neurological Physiotherapy</h3>
                         <p class="preview-text">
                             Physiotherapy can help people living with neurological conditions such as stroke, Parkinson's disease and other neurological conditions maintain movement, strength and independence. Treatment is tailored to each person and may focus on walking, balance, coordination, strength, transfers and falls prevention, as well as making everyday activities safer and easier.
@@ -229,39 +230,5 @@
     </section>
 
     {% include 'components/footer.html' %}
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const serviceCards = document.querySelectorAll('.service-card');
-
-        serviceCards.forEach(card => {
-            const readMoreBtn = card.querySelector('.read-more-btn');
-            
-            if (readMoreBtn) {
-                readMoreBtn.addEventListener('click', function() {
-                    // Close all other cards first
-                    serviceCards.forEach(otherCard => {
-                        if (otherCard !== card) {
-                            otherCard.setAttribute('data-accordion', 'false');
-                            otherCard.querySelector('.service-card-content').setAttribute('aria-hidden', 'true');
-                            otherCard.querySelector('.read-more-btn').textContent = 'Read More';
-                        }
-                    });
-
-                    // Toggle the clicked card
-                    if (card.getAttribute('data-accordion') === 'true') {
-                        card.setAttribute('data-accordion', 'false');
-                        card.querySelector('.service-card-content').setAttribute('aria-hidden', 'true');
-                        readMoreBtn.textContent = 'Read More';
-                    } else {
-                        card.setAttribute('data-accordion', 'true');
-                        card.querySelector('.service-card-content').setAttribute('aria-hidden', 'false');
-                        readMoreBtn.textContent = 'Show Less';
-                    }
-                });
-            }
-        });
-    });
-    </script>
 </body>
 </html>

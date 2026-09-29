@@ -73,10 +73,6 @@
     position: relative;
 }
 
-.nav-item button {
-    all: unset;
-}
-
 .nav-links {
     list-style: none;
     flex: 1;
