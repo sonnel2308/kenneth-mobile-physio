@@ -31,41 +31,6 @@
     line-height: 1.2;
 }
 
-.services-hero .subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
-    opacity: 0.9;
-    margin-bottom: 2rem;
-}
-
-.services-hero .disclaimer {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    margin-top: 1rem;
-    font-style: italic;
-}
-
-/* Introduction Section */
-.services-intro {
-    padding: 6vh 0;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.services-intro h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--color-dark);
-}
-
-.services-intro p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--color-text-muted);
-}
-
 /* Service ids */
 #aged-care-physio, #physio-for-ndis, #fall-prevention-balance-training, #post-joint-replacement, #chronic-conditions, #mobility-aid-training, #neurological-physio {
     scroll-margin-top: 150px;
@@ -237,127 +202,17 @@
     transform: translateY(0);
 }
 
-/* Services Detail Section */
-.services-detail-section {
-    padding: 6vh 0;
-    background-color: var(--color-light);
-}
-
-.services-detail-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.services-detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.services-detail-text h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--color-dark);
-}
-
-.services-detail-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
-}
-
-.services-detail-image {
-    text-align: center;
-    font-size: 8rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Features Section */
-.services-features {
-    padding: 6vh 0;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.feature-item {
-    text-align: center;
-    padding: 2rem;
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.feature-item h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--color-dark);
-}
-
-.feature-item p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-    margin: 0;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .services-hero h1 {
         font-size: 2.5rem;
     }
 
-    .services-hero .subtitle {
-        font-size: 1.2rem;
-    }
-
-    .services-intro h2 {
-        font-size: 2rem;
-    }
-
-    .services-intro p {
-        font-size: 1.1rem;
-    }
-
     .services-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
-    .services-detail-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .services-cta h2 {
-        font-size: 2rem;
-    }
-
-    .faq-container h2 {
-        font-size: 2rem;
-    }
-
-    .faq-question {
-        padding: 1.5rem;
-        font-size: 1.1rem;
-    }
-
+    
     .service-card h3 {
         font-size: 1.3rem;
     }
@@ -376,23 +231,11 @@
         font-size: 2rem;
     }
 
-    .services-hero .subtitle {
-        font-size: 1rem;
-    }
-
     .service-card {
         padding: 2rem;
     }
 
     .service-card h3 {
         font-size: 1.3rem;
-    }
-
-    .services-cta h2 {
-        font-size: 1.5rem;
-    }
-
-    .services-cta p {
-        font-size: 1rem;
     }
 }

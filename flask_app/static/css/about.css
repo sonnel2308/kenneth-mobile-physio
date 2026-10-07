@@ -2,18 +2,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5vw;
-    align-items: center;
 }
 
 .about-image {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-tertiary) 100%);
     border-radius: 20px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 5rem;
+    height: 100%;
+}
+
+#about-image-1 {
+    background-image: url('/static/images/about-image-1.png');
+    background-position: 0% 20%;
+    background-size: cover;
+}
+
+#about-image-2 {
+    background-image: url('/static/images/about-image-2.png');
+    background-position: 0 100%;
+    background-size: cover;
 }
 
 .about-text {
@@ -22,43 +27,8 @@
     gap: 20px;
 }
 
-.about-page h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--color-dark);
-}
-
-.about-page p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--color-text-muted);
-    margin-bottom: 20px;
-}
-
-.text-center {
-    text-align: center;
-}
-
 .about-section {
     background-color: var(--color-light);
-}
-
-.about-page .service-card {
-    flex: 0 0 25%;
-    min-width: 200px;
-}
-
-.about-page .service-card > div:first-child {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: var(--color-primary);
-}
-
-.about-page .service-card.team-icon {
-    font-size: 4rem;
-    display: block;
-    text-align: center;
-    margin-bottom: 15px;
 }
 
 .about-features {
@@ -67,37 +37,23 @@
     gap: 20px;
 }
 
-.about-feature {
-    display: flex;
-    gap: 15px;
-}
-
-.about-feature-icon {
-    font-size: 2rem;
-    min-width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-feature h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: var(--color-dark);
-}
-
-.about-feature p {
-    font-size: 1rem;
-    color: var(--color-text-muted);
-    margin-bottom: 0;
-}
-
 .about-cta {
     font-size: 1.1rem;
 }
 
 .about-content {
+    padding: 0 10vw;
     display: flex;
-    flex-direction: column;
     gap: 5vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
 }

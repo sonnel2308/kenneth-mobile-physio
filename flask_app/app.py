@@ -32,6 +32,11 @@ def faqs_page():
     """Renders the FAQs page."""
     return render_template('faqs.html', title='FAQs')
 
+@app.route('/referrers', methods=['GET'])
+def referrers_page():
+    """Renders the referrers page."""
+    return render_template('referrers.html', title='Referrers')
+
 @app.route('/referral', methods=['GET'])
 def referral_page():
     """Renders the referral form page."""
@@ -61,25 +66,6 @@ def book_appointment():
         name=full_name
     )
 
-@app.route('/funding-pathways/aged-care', methods=['GET'])
-def aged_care_page():
-    """Renders the aged care page."""
-    return render_template('aged-care.html', title='Aged Care Funding Pathway')
-
-@app.route('/funding-pathways/ndis', methods=['GET'])
-def ndis_page():
-    """Renders the NDIS page."""
-    return render_template('ndis.html', title='NDIS Funding Pathway')
-
-@app.route('/funding-pathways/dva', methods=['GET'])
-def dva_page():
-    """Renders the DVA page."""
-    return render_template('dva.html', title='DVA Funding Pathway')
-
-@app.route('/funding-pathways/private-clients', methods=['GET'])
-def private_clients_page():
-    """Renders the Private Clients page."""
-    return render_template('private-clients.html', title='Private Clients Funding Pathway')
 
 if __name__ == '__main__':
     app.run(debug=True)
