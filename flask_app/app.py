@@ -37,11 +37,6 @@ def referrers_page():
     """Renders the referrers page."""
     return render_template('referrers.html', title='Referrers')
 
-@app.route('/referral', methods=['GET'])
-def referral_page():
-    """Renders the referral form page."""
-    return render_template('making-a-referral.html', title='Making a Referral')
-
 @app.route('/contact', methods=['GET'])
 def contact_page():
     """Renders the contact page."""

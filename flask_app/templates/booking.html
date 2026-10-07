@@ -3,29 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Appointment | Optimal Motion Physiotherapy</title>
+    <title>Making a Referral | Kenneth Mobile Physiotherapy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     {% include 'components/navbar.html' %}
 
-    <!-- Booking Form Section -->
-    <section id="booking-form-container" class="booking-section section-padding">
+    <!-- Referral Form Section -->
+    <section id="referral-form-container" class="booking-section section-padding">
         <div class="container">
             <div class="form-card">
-                <h2 class="text-center mb-4">Schedule Consultation</h2>
-                <p class="text-center mb-5">Please fill in your details below to book your appointment with our expert physiotherapists.</p>
+                <h2 class="text-center mb-4">Book Appointment or Make a Referral</h2>
+                <p class="text-center mb-5">Please complete the form below to book an appointment or refer a client for physiotherapy services.</p>
                 
                 <!-- Form structure -->
-                <form action="/book-appointment" method="POST" class="booking-form">
+                <form action="/make-referral" method="POST" class="booking-form">
                     <div class="form-group">
-                        <label for="full_name">Full Name <span class="required">*</span></label>
-                        <input type="text" id="full_name" name="full_name" class="form-control" required placeholder="John Doe">
+                        <label for="relationship_to_client">Are you the client or booking on behalf of someone else?</label>
+                        <select name="relationship_to_client" id="relationship_to_client" class="form-control">
+                            <option value="" disabled selected hidden>Please select an option</option>
+                            <option value="client">I am the client</option>
+                            <option value="other">I am a family member / support coordinator / case manager / carer</option>
+                        </select>
+                    </div>
+
+                    <div class="section-title">Client Information</div>
+                    
+                    <div class="form-group">
+                        <label for="client_full_name">Client Full Name <span class="required">*</span></label>
+                        <input type="text" id="client_full_name" name="client_full_name" class="form-control" required placeholder="Enter client's full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="client_gender">Client Gender <span class="required">*</span></label>
+                        <select name="client_gender" id="client_gender" class="form-control">
+                            <option value="" disabled selected hidden>Please select an option</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
                     </div>
                     
+                    <div class="form-group">
+                        <label for="client_dob">Client Date of Birth <span class="required">*</span></label>
+                        <input type="date" id="client_dob" name="client_dob" class="form-control" required>
+                    </div>
+
+                    <div class="section-title">Contact Information</div>
+
                     <div class="form-group">
                         <label for="phone_number">Phone Number <span class="required">*</span></label>
                         <input type="tel" id="phone_number" name="phone_number" class="form-control" required placeholder="(04) XXX XXX XXX">
@@ -33,41 +60,58 @@
                     
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" class="form-control" required placeholder="you@example.com">
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="john@example.com">
+                    </div>
+                    
+                    <div class="section-title">Client's Residence</div>
+
+                    <div class="form-group">
+                        <label for="suburb">Suburb <span class="required">*</span></label>
+                        <input type="text" id="suburb" name="suburb" class="form-control" required placeholder="Sydney">
                     </div>
                     
                     <div class="form-group">
-                        <label for="postcode">Postcode <span class="required">*</span></label>
-                        <input type="text" id="postcode" name="postcode" class="form-control" required placeholder="e.g. 2000">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="relationship">Relationship to Service Recipient <span class="required">*</span></label>
-                        <select id="relationship" name="relationship" class="form-control" required>
-                            <option value="" disabled selected>Select your relationship</option>
-                            <option value="myself">For myself</option>
-                            <option value="family_member">Family member</option>
-                            <option value="friend">Friend</option>
-                            <option value="allied_community_health">Allied community health professional</option>
-                            <option value="general_practitioner">General practitioner</option>
-                            <option value="support_at_home_package_manager">Support at home package manager</option>
-                            <option value="ndis_planner_support_coordinator">NDIS planner - support coordinator</option>
-                            <option value="others">Others</option>
+                        <label for="resident_type">Resident Type <span class="required">*</span></label>
+                        <select name="resident_type" id="resident_type" class="form-control">
+                            <option value="" disabled selected hidden>Please select an option</option>
+                            <option value="private_resident">Private Resident</option>
+                            <option value="supported_independent_living">Supported Independent Living (SIL)</option>
+                            <option value="group_home">Group Home</option>
+                            <option value="aged_care">Aged Care Facility</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     
+                    <div class="section-title">For Referrers</div>
+
                     <div class="form-group">
-                        <label for="time">Preferred Visit Time <span class="required">*</span></label>
-                        <select id="time" name="time" class="form-control" required>
-                            <option value="" disabled selected>Select your preferred time</option>
-                            <option value="morning">Morning (9am - 12pm)</option>
-                            <option value="afternoon">Afternoon (1pm - 5pm)</option>
+                        <label for="referral_type">Type of Referral</label>
+                        <select name="referral_type" id="referral_type" class="form-control">
+                            <option value="" disabled selected hidden>Please select an option</option>
+                            <option value="support_at_home">Support at Home</option>
+                            <option value="ndis">NDIS</option>
+                            <option value="medicare">Medicare</option>
+                            <option value="chronic_condition">Chronic Condition Management Plan</option>
+                            <option value="private_health_insurance">Private Health Insurance</option>
+                            <option value="not_sure">Not Sure</option>
                         </select>
                     </div>
+
+                    <div class="form-group">
+                        <label for="ndis_number">NDIS Number (if applicable)</label>
+                        <input type="text" id="ndis_number" name="ndis_number" class="form-control" placeholder="43XXXXXXXX">
+                    </div>
+
+                    <div class="section-title">Comments</div>
+
+                    <div class="form-group">
+                        <label for="client_concern">Please provide the client's main concern or reason for referral</label>
+                        <textarea name="client_concern" id="client_concern" class="form-control" rows="10"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large mt-4">Submit Referral Request</button>
                     
-                    <button type="submit" class="btn btn-primary btn-large mt-4">Submit Booking Request</button>
-                    
-                    <p class="disclaimer mt-4">We respect your privacy. Your details will only be used for booking purposes.</p>
+                    <p class="disclaimer mt-4">We respect your privacy. All information will be kept confidential and used solely for referral purposes.</p>
                 </form>
             </div>
         </div>
@@ -75,7 +119,7 @@
 
     {% include 'components/footer.html' %}
     <script>
-        // Simple script to handle the CTA button on the nav bar when on the booking page
+        // Simple script to handle the CTA button on the nav bar when on the referral page
         document.querySelector('.cta-button-nav').setAttribute('href', '/booking');
     </script>
 </body>

@@ -118,19 +118,24 @@
     flex-shrink: 1;
 }
 
-.cta-button-nav {
-    flex-shrink: 0;
-    background-color: var(--color-secondary);
-    color: white !important;
-    padding: 8px 18px;
-    border-radius: 25px;
-    white-space: nowrap;
+.nav-cta {
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-.cta-button-nav:hover {
-    background-color: #506D9F;
-    color: white !important;
-    transition: background-color 0.3s;
+.nav-cta .btn {
+    margin: 0;
+}
+
+.nav-cta .subtitle {
+    position: absolute;
+    top: 100%;
+    margin-top: 0.2rem;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
 }
 
 /* Responsive Navbar */
