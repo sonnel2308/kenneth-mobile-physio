@@ -47,7 +47,6 @@
 }
 
 .disclaimer {
-    margin-top: 20px;
     font-size: 1.3rem;
     opacity: 0.8;
 }
@@ -99,7 +98,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(2px) brightness(0.4);
+    backdrop-filter: blur(1px) brightness(0.4);
 }
 
 /* SLIDER */

@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/faqs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/accordion.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/faqs.js') }}"></script>
 </head>
 <body>
     {% include 'components/navbar.html' %}
@@ -16,7 +16,6 @@
     <section class="faqs-hero">
         <div class="container faqs-hero-content">
             <h1>Frequently Asked Questions</h1>
-            <p class="subtitle">Find answers to common questions about our services</p>
         </div>
     </section>
 
@@ -26,75 +25,75 @@
                 Questions & Answers
             </h2>
             <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">Which areas do you service?</div>
-                    <div class="faq-answer">
+                <details class="accordion">
+                    <summary>Which areas do you service?</summary>
+                    <div class="accordion-content">
                         <p>We provide mobile physiotherapy services across Sydney, with a focus on Westmead, Parramatta, Rosehill, North Rocks, Northmead, Oatlands and surrounding suburbs.</p>
                         <p>If you're unsure whether we cover your area, don't hesitate to get in touch with us, and we'll be happy to help.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do you come to our home?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>Do you come to our home?</summary>
+                    <div class="accordion-content">
                         <p>Yes, absolutely. We are a mobile physiotherapy service, so we come to you in the comfort and convenience of your own home. We also provide physiotherapy in aged care facilities and supported accommodation.</p>
                         <p>We aim to make physiotherapy accessible and convenient, while helping you improve your mobility, strength, balance, independence and confidence in everyday life.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do I need a referral?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>Do I need a referral?</summary>
+                    <div class="accordion-content">
                         <p>No referral is required for Support at Home, NDIS (self-managed or plan-managed), or private physiotherapy. You, a family member, plan coordinator or case manager can contact us directly to arrange an appointment.</p>
                         <p>For DVA and Chronic Disease Management (CDM) clients, a referral is required from your GP. We can assist you in understanding what is needed before your first appointment.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How do I use my Support at Home funding?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>How do I use my Support at Home funding?</summary>
+                    <div class="accordion-content">
                         <p>You can use your Support at Home funding to access physiotherapy services at home.</p>
                         <p>We can work directly with your care manager, provider or support coordinator to help arrange home physiotherapy and ensure the service fits within your available funding and care plan.</p>
-                        <p>Simply contact us, and we can help coordinate the next steps.</p>
+                        <p>Simply contact us, and we can help coordinate the next steps.</p>                        
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">I am an NDIS participant. How do I access your mobile physiotherapy services?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>I am an NDIS participant. How do I access your mobile physiotherapy services?</summary>
+                    <div class="accordion-content">
                         <p>If you are self-managed or plan-managed, you can contact us directly to arrange a mobile physiotherapy appointment.</p>
                         <p>We will work with you to understand your needs and support you to achieve your NDIS goals, whether that involves improving mobility, strength, balance, independence or your ability to participate in everyday activities.</p>
                         <p>We can also work with your support coordinator, plan manager or family member to help coordinate your physiotherapy services.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What other languages do we speak?</div>
-                    <div class="faq-answer">
-                        <p>We have Vietnamese-speaking physiotherapists who can provide care in Vietnamese, helping clients feel more comfortable and understood.</p>
-                        <p>We value culturally sensitive care and are proud to support clients and families from diverse cultural backgrounds.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Are Kenneth Physiotherapists reliable and trustworthy?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>Are Kenneth Physiotherapists reliable and trustworthy?</summary>
+                    <div class="accordion-content">
                         <p>Absolutely. We understand that inviting a physiotherapist into your home is about more than treatment; it's about feeling comfortable, respected, and confident in the person caring for you or your loved one. At Kenneth Physiotherapy, our therapists are qualified, experienced and committed to providing safe, respectful and personalised care. We take the time to listen, understand your needs, and work toward goals that matter to you. We value reliability, punctuality, clear communication and building genuine relationships with our clients, families and care teams.</p>
                         <p>Our goal is simple: to provide professional physiotherapy you can trust, in the comfort of your own home.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Does Kenneth Physiotherapy accept compensation clients?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>Does Kenneth Physiotherapy accept compensation clients?</summary>
+                    <div class="accordion-content">
                         <p>Yes. Kenneth Physiotherapy can provide mobile physiotherapy to clients funded through workers' compensation and motor accident compensation schemes (CTP), subject to the relevant insurer or funding authority's approval. Our therapists are fully SIRA approved.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is there a waiting period?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>Is there a waiting period?</summary>
+                    <div class="accordion-content">
                         <p>In most cases, there is no lengthy waiting period. We will do our best to arrange an appointment within a few days.</p>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Do I need to provide any equipment?</div>
-                    <div class="faq-answer">
+                </details>
+                <details class="accordion">
+                    <summary>Do I need to provide any equipment?</summary>
+                    <div class="accordion-content">
                         <p>Usually no. Most of our physiotherapy exercises can be performed using everyday items you already have around your home, with little or no specialised equipment. However, from time to time, we may recommend purchasing simple and affordable equipment, such as weights, theraband or other exercise aids, to help maximise your progress and achieve your goals.</p>
                     </div>
-                </div>
+                </details>
+                <details class="accordion">
+                    <summary>What other languages do we speak?</summary>
+                    <div class="accordion-content">
+                        <p>We have Vietnamese-speaking physiotherapists who can provide care in Vietnamese, helping clients feel more comfortable and understood.</p>
+                        <p>We value culturally sensitive care and are proud to support clients and families from diverse cultural backgrounds.</p>
+                    </div>
+                </details>
             </div>
         </div>
     </section>

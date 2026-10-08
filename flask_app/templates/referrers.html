@@ -6,42 +6,38 @@
     <title>Referrers | Kenneth Mobile Physiotherapy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/accordion.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/referrers.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        .referrers-section a {
-            color: var(--color-primary);
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     {% include 'components/navbar.html' %}
+
+    <section class="referrers-hero">
+        <div class="container referrers-hero-content">
+            <h1>Referrers</h1>
+        </div>
+    </section>
+
     <section class="section-padding referrers-section">
         <div class="container">
-            <details class="accordion">
-                <summary>Support At Home Providers</summary>
-                <div class="accordion-content">
+            <div class="referrer-container">
+                <div>
+                    <h2>Support At Home Providers • General Practitioners (GPs)</h2>
+                </div>
+                <div>
                     <p>Thank you for considering Kenneth Physiotherapy to support your clients in the comfort and convenience of their own home. Referrals can be made by phone (<a href="tel:0451798814">0451 798 814</a>), by email (<a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a>) or through our <a href="/booking">Booking page</a>. Our team is available to assist with any enquiries, discuss your client's needs and respond to urgent requests.</p>
                     <p>Unlike many other providers, you won't be waiting days to hear back from us.</p>
                 </div>
-            </details>
-            <details class="accordion">
-                <summary>GPs</summary>
-                <div class="accordion-content">
-                    <p>Thank you for considering Kenneth Physiotherapy to support your clients in the comfort and convenience of their own home. Referrals can be made by phone (<a href="tel:0451798814">0451 798 814</a>), by email (<a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a>) or through our <a href="/booking">Booking page</a>. Our team is available to assist with any enquiries, discuss your client's needs and respond to urgent requests.</p>
+            </div>
+            <div class="referrer-container">
+                <h2>NDIS</h2>
+                <div>
+                    <p>Supporting your client's goals, independence and quality of life.</p>
+                    <p>At Kenneth Physiotherapy, we provide personalised mobile physiotherapy for NDIS participants in the comfort of their own home, supported accommodation or community setting. We understand that every person is different. Our physiotherapy focuses on your individual goals, abilities and everyday needs, helping you improve your physical function and participate more confidently in the activities that are important to you.</p>
                     <p>Unlike many other providers, you won't be waiting days to hear back from us.</p>
-                </div>
-            </details>
-            <details class="accordion">
-                <summary>NDIS</summary>
-                <div class="accordion-content">
-                    <p>Supporting your client's goals, independence and quality of life</p>
-                    <p>At Kenneth Physiotherapy, we provide personalised mobile physiotherapy for NDIS participants in the comfort of their own home, supported accommodation or community setting. We understand that every person is different. Our physiotherapy focuses on your individual goals, abilities and everyday needs, helping you improve your physical function and participate more confidently in the activities that are important to you. Unlike many other providers, you won't be waiting days to hear back from us.</p>
                     <p>We work collaboratively with participants, families, support workers, support coordinators, plan managers and other healthcare professionals to ensure physiotherapy is practical, goal-focused and suited to the participant's individual circumstances.</p>
                 </div>
-            </details>
+            </div>
         </div>
     </section>
 </body>

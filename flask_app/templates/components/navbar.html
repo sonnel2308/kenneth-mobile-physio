@@ -2,44 +2,51 @@
 <nav class="navbar">
     {% import 'macros.html' as components %}
 
-    <div class="container">
-        <div class="logo">
-            <img src="{{ url_for('static', filename='images/brand-logo.png') }}" />
-        </div>
-        <div class="nav-contact">
-            <div class="nav-details"><span class="nav-icon">{{ components.icon('phone') }}</span> 0451 798 814</div>
-            <div class="nav-details"><span class="nav-icon">{{ components.icon('email') }}</span> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></div>
-            <div class="nav-details"><span class="nav-icon">{{ components.icon('clock') }}</span> Monday-Friday 9am-5pm</div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="/" class="nav-item nav-link">Home</a></li>
-            <li><a href="/about" class="nav-item nav-link">About Us</a></li>
-            <li class="nav-item dropdown">
-                <a
-                    href="/services"
-                    class="nav-link dropdown-toggle"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                >
-                    Services
-                </a>
-                <div class="dropdown-menu" role="menu" aria-label="Services">
-                    <a href="/services#aged-care-physio" class="dropdown-item" role="menuitem">Aged Care Physio</a>
-                    <a href="/services#physio-for-ndis" class="dropdown-item" role="menuitem">NDIS Physio</a>
-                    <a href="/services#fall-prevention-balance-training" class="dropdown-item" role="menuitem">Fall Prevention & Balance Training</a>
-                    <a href="/services#neurological-physio" class="dropdown-item" role="menuitem">Neurological Physio</a>
-                    <a href="/services#joint-replacement" class="dropdown-item" role="menuitem">Joint Replacement Physio</a>
-                    <a href="/services#chronic-conditions" class="dropdown-item" role="menuitem">Chronic Condition & Pain Management</a>
-                    <a href="/services#mobility-aid-training" class="dropdown-item" role="menuitem">Mobility Aids & Training</a>
+    <div class="nav-container">
+        <div style="display: flex; justify-content: space-between;">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/brand-logo.png') }}" />
+            </div>
+            <div class="nav-contact">
+                <div>
+                    <div class="nav-details"><span class="nav-icon">{{ components.icon('phone') }}</span> 0451 798 814</div>
+                    <div class="nav-details"><span class="nav-icon">{{ components.icon('email') }}</span> <a href="mailto:info@kennethphysio.com">info@kennethphysio.com</a></div>
                 </div>
-            </li>
-            <li><a href="/faqs" class="nav-item nav-link">FAQs</a></li>
-            <li><a href="/referrers" class="nav-item nav-link">Referrers</a></li>
-            <li><a href="/contact" class="nav-item nav-link">Contact</a></li>
-        </ul>
-        <div class="nav-cta">
-            <a href="/booking" class="btn btn-primary">Book Appointment</a>
-            <span class="subtitle">or make a referral</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 2vw;">
+            <ul class="nav-links">
+                <li><a href="/" class="nav-item nav-link">Home</a></li>
+                <li><a href="/about" class="nav-item nav-link">About Us</a></li>
+                <li class="nav-item dropdown">
+                    <a
+                        href="/services"
+                        class="nav-link dropdown-toggle"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Services
+                    </a>
+                    <div class="dropdown-menu" role="menu" aria-label="Services">
+                        <a href="/services#aged-care-physio" class="dropdown-item" role="menuitem">Aged Care Physio</a>
+                        <a href="/services#physio-for-ndis" class="dropdown-item" role="menuitem">NDIS Physio</a>
+                        <a href="/services#fall-prevention-balance-training" class="dropdown-item" role="menuitem">Fall Prevention & Balance Training</a>
+                        <a href="/services#neurological-physio" class="dropdown-item" role="menuitem">Neurological Physio</a>
+                        <a href="/services#joint-replacement" class="dropdown-item" role="menuitem">Joint Replacement Physio</a>
+                        <a href="/services#chronic-conditions" class="dropdown-item" role="menuitem">Chronic Condition & Pain Management</a>
+                        <a href="/services#mobility-aid-training" class="dropdown-item" role="menuitem">Mobility Aids & Training</a>
+                    </div>
+                </li>
+                <li><a href="/faqs" class="nav-item nav-link">FAQs</a></li>
+                <li><a href="/referrers" class="nav-item nav-link">Referrers</a></li>
+                <li><a href="/contact" class="nav-item nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="/booking" class="btn btn-primary">Book Appointment</a>
+            </div>
         </div>
     </div>
 

@@ -6,11 +6,11 @@
     z-index: 100;
 }
 
-.navbar .container {
+.nav-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
+    flex-direction: column;
+    padding: 1vh 2vw;
+    gap: 0.5vh;
 }
 
 .nav-details {
@@ -65,6 +65,11 @@
     color: var(--color-primary);
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
 .logo img {
     height: 64px;
 }
@@ -77,9 +82,8 @@
     list-style: none;
     flex: 1;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    gap: 1vw;
+    gap: 2vw;
 }
 
 .nav-links li {
@@ -115,7 +119,8 @@
 }
 
 .nav-contact {
-    flex-shrink: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav-cta {
@@ -204,9 +209,5 @@
 
     .dropdown-item {
         padding-left: 24px;
-    }
-
-    .nav-contact {
-        display: none;
     }
 }
