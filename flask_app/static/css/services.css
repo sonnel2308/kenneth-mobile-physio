@@ -38,15 +38,17 @@
 
 /* Services Grid */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 2.5rem;
     margin-top: 2rem;
 }
 
 .service-card {
-    height: 100%;
+    flex: 0 1 25vw;
+    height: auto;
     background: white;
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
