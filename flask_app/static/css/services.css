@@ -36,18 +36,32 @@
     scroll-margin-top: 150px;
 }
 
+.services-container {
+    display: flex;
+    gap: 5vw;
+}
+
+.services-sidebar {
+    position: sticky;
+    top: 200px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    gap: 3vh;
+}
+
 /* Services Grid */
 .services-grid {
+    flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
     gap: 2.5rem;
-    margin-top: 2rem;
 }
 
 .service-card {
-    flex: 0 1 25vw;
     height: auto;
     background: white;
     border-radius: 16px;
@@ -55,7 +69,6 @@
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction: column;
     overflow: hidden;
 }
 
@@ -69,10 +82,14 @@
     grid-column: 2;
 }
 
+.service-card p {
+    margin-bottom: 1rem;
+}
+
 .service-card-image {
     position: relative;
+    flex: 0 0 40%;
     min-height: 400px;
-    width: 100%;
     border-radius: 16px 16px 0 0;
     overflow: hidden;
 }

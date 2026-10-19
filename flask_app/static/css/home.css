@@ -20,7 +20,7 @@
     background-size: cover;
     background-position: 0% 20%;
     background-repeat: no-repeat;
-    filter: blur(2px);
+    filter: blur(1px);
 }
 
 .hero-section::after {
@@ -98,7 +98,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(1px) brightness(0.4);
+    backdrop-filter: blur(0.5px) brightness(0.4);
 }
 
 /* SLIDER */

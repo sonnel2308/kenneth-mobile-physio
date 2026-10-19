@@ -96,18 +96,6 @@
     text-align: center;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--color-dark);
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover {
-    color: var(--color-primary);
-    cursor: pointer;
-}
-
 .nav-link {
     color: var(--color-dark);
     transition: color 0.2s;

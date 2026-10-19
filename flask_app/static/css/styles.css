@@ -28,6 +28,15 @@ body {
 a {
     all: unset;
     cursor: pointer;
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-primary);
+    cursor: pointer;
 }
 
 .container {
