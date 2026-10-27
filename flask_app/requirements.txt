@@ -1,5 +1,6 @@
 Flask
 Flask-Limiter
+flask_sqlalchemy
 gunicorn
 psycopg[binary]
 resend
