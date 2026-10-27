@@ -132,53 +132,9 @@
 }
 
 /* RESPONSIVENESS */
-@media (max-width: 1280px) {
+@media (max-width: 768px) {
     .service-grid, .process-content, .about-grid {
         flex-direction: column;
         gap: 25px;
-    }
-
-    .nav-contact {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .subtitle {
-        font-size: 1.1rem;
-    }
-
-    .service-card, .step {
-        padding: 20px;
-    }
-
-    .navbar {
-        height: auto;
-    }
-
-    .navbar .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .btn-large {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
     }
 }

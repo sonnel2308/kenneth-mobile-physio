@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Making a Referral | Kenneth Mobile Physiotherapy</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/navbar.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,14 +21,14 @@
                 <p class="text-center mb-5">Please complete the form below to book an appointment or refer a client for physiotherapy services.</p>
                 
                 <!-- Form structure -->
-                <form action="/make-referral" method="POST" class="booking-form">
+                <form action="/book-appointment" method="POST" class="booking-form">
                     <div class="form-group">
-                        <label for="relationship_to_client">Are you the client or booking on behalf of someone else?</label>
-                        <select name="relationship_to_client" id="relationship_to_client" class="form-control">
+                        <label for="relationship_to_client">Are you the client or booking on behalf of someone else? <span class="required">*</span></label>
+                        <select name="relationship_to_client" id="relationship_to_client" class="form-control" required>
                             <option value="" disabled selected hidden>Please select an option</option>
                             <option value="client">I am the client</option>
-                            <option value="general-practitioner">I am a General Practitioner (GP)</option>
-                            <option value="other">I am a family member / support coordinator / case manager / carer</option>
+                            <option value="general practitioner">I am a General Practitioner (GP)</option>
+                            <option value="family member / support coordinator / case manager / carer">I am a family member / support coordinator / case manager / carer</option>
                         </select>
                     </div>
 
@@ -75,10 +75,10 @@
                         <label for="resident_type">Resident Type <span class="required">*</span></label>
                         <select name="resident_type" id="resident_type" class="form-control">
                             <option value="" disabled selected hidden>Please select an option</option>
-                            <option value="private_resident">Private Resident</option>
-                            <option value="supported_independent_living">Supported Independent Living (SIL)</option>
-                            <option value="group_home">Group Home</option>
-                            <option value="aged_care">Aged Care Facility</option>
+                            <option value="private resident">Private Resident</option>
+                            <option value="supported independent living">Supported Independent Living (SIL)</option>
+                            <option value="group home">Group Home</option>
+                            <option value="aged care">Aged Care Facility</option>
                             <option value="other">Other</option>
                         </select>
                     </div>
@@ -89,12 +89,12 @@
                         <label for="referral_type">Type of Referral</label>
                         <select name="referral_type" id="referral_type" class="form-control">
                             <option value="" disabled selected hidden>Please select an option</option>
-                            <option value="support_at_home">Support at Home</option>
+                            <option value="support at home">Support at Home</option>
                             <option value="ndis">NDIS</option>
-                            <option value="wc-ctp">WC / CTP</option>
-                            <option value="chronic_condition">Chronic Condition Management Plan</option>
-                            <option value="private_health_insurance">Private Health Insurance</option>
-                            <option value="not_sure">Not Sure</option>
+                            <option value="wc ctp">WC / CTP</option>
+                            <option value="chronic condition">Chronic Condition Management Plan</option>
+                            <option value="private health insurance">Private Health Insurance</option>
+                            <option value="not sure">Not Sure</option>
                         </select>
                     </div>
 
@@ -119,9 +119,5 @@
     </section>
 
     {% include 'components/footer.html' %}
-    <script>
-        // Simple script to handle the CTA button on the nav bar when on the referral page
-        document.querySelector('.cta-button-nav').setAttribute('href', '/booking');
-    </script>
 </body>
 </html>

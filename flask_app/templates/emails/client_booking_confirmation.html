@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Request Received</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.5; color: #293a70;">
+    <h2>Appointment Request Received</h2>
+
+    <p>Dear {{ booking.client_full_name }},</p>
+
+    <p>
+        Thank you for submitting an appointment request to Kenneth Mobile Physiotherapy.
+        We have received your details and will be in touch to discuss your needs and
+        arrange a suitable appointment.
+    </p>
+
+    <p>
+        Please note that your appointment is not yet confirmed. We will contact you
+        to discuss the next steps.
+    </p>
+
+    <h3>Your Submitted Details</h3>
+
+    <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Relationship to Client</td>
+            <td style="padding: 8px;">{{ booking.relationship_to_client }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Full Name</td>
+            <td style="padding: 8px;">{{ booking.client_full_name }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Phone</td>
+            <td style="padding: 8px;">{{ booking.phone_number }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Email</td>
+            <td style="padding: 8px;">{{ booking.email }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Suburb</td>
+            <td style="padding: 8px;">{{ booking.suburb }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Resident Type</td>
+            <td style="padding: 8px;">{{ booking.resident_type }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Referral Type</td>
+            <td style="padding: 8px;">{{ booking.referral_type }}</td>
+        </tr>
+    </table>
+
+    <p style="margin-top: 24px;">
+        If any of the details above are incorrect, or if you have any questions,
+        please contact us at
+        <a href="mailto:info@kennethphysio.com" style="color: #50949f;">
+            info@kennethphysio.com
+        </a>.
+    </p>
+
+    <p>
+        Kind regards,<br>
+        <strong>Kenneth Mobile Physiotherapy</strong>
+    </p>
+
+    <p style="margin-top: 24px; color: #666; font-size: 12px;">
+        This is an automated confirmation that your appointment request has been received.
+    </p>
+</body>
+</html>

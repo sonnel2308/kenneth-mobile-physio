@@ -75,14 +75,3 @@
         padding: 0 1.5rem;
     }
 }
-
-@media (max-width: 480px) {
-    .accordion > summary {
-        padding: 1.2rem;
-        font-size: 0.95rem;
-    }
-
-    .accordion-content {
-        padding: 0 1.2rem;
-    }
-}

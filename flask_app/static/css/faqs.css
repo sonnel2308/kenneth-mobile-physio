@@ -88,35 +88,3 @@
         justify-content: center;
     }
 }
-
-@media (max-width: 480px) {
-    .faqs-hero h1 {
-        font-size: 2rem;
-    }
-
-    .faqs-hero .subtitle {
-        font-size: 1rem;
-    }
-
-    .faq-question {
-        padding: 1.2rem;
-        font-size: 1rem;
-    }
-
-    .faq-answer {
-        padding: 0 1.2rem;
-    }
-
-    .faqs-cta h2 {
-        font-size: 1.5rem;
-    }
-
-    .faqs-cta p {
-        font-size: 1rem;
-    }
-
-    .cta-link {
-        padding: 0.8rem;
-        font-size: 0.95rem;
-    }
-}

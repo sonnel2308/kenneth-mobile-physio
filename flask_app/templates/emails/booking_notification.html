@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Appointment Request</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.5; color: #293a70;">
+    <h2>New Appointment Request</h2>
+
+    <p>A new appointment request has been submitted through the website.</p>
+
+    <h3>Client Details</h3>
+
+    <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Relationship to Client</td>
+            <td style="padding: 8px;">{{ booking.relationship_to_client }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Full Name</td>
+            <td style="padding: 8px;">{{ booking.client_full_name }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Phone</td>
+            <td style="padding: 8px;">{{ booking.phone_number }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Email</td>
+            <td style="padding: 8px;">{{ booking.email }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Suburb</td>
+            <td style="padding: 8px;">{{ booking.suburb }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Resident Type</td>
+            <td style="padding: 8px;">{{ booking.resident_type }}</td>
+        </tr>
+        <tr>
+            <td style="padding: 8px; font-weight: bold;">Referral Type</td>
+            <td style="padding: 8px;">{{ booking.referral_type }}</td>
+        </tr>
+    </table>
+
+    <h3>Client Concern</h3>
+
+    <div style="
+        padding: 12px;
+        background-color: #f5f7f8;
+        border-radius: 6px;
+        max-width: 600px;
+        white-space: pre-wrap;
+    ">
+        {{ booking.client_concern or "Not provided" }}
+    </div>
+
+    <p style="margin-top: 24px; color: #666;">
+        This is an automated notification from the website.
+    </p>
+</body>
+</html>

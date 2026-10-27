@@ -135,6 +135,12 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1280px) {
+    .services-sidebar {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .services-hero h1 {
         font-size: 2.5rem;
@@ -155,19 +161,5 @@
 
     .service-card ul {
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-hero h1 {
-        font-size: 2rem;
-    }
-
-    .service-card {
-        padding: 2rem;
-    }
-
-    .service-card h3 {
-        font-size: 1.3rem;
     }
 }

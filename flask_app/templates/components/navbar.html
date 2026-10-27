@@ -17,7 +17,11 @@
 
         <hr>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 2vw;">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-link-container">
             <ul class="nav-links">
                 <li><a href="/" class="nav-item nav-link">Home</a></li>
                 <li><a href="/about" class="nav-item nav-link">About Us</a></li>
@@ -66,16 +70,27 @@
     </div>
 
     <script>
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdown = dropdownToggle.closest('.nav-item');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-        dropdownToggle.addEventListener('click', (event) => {
-            if (window.innerWidth <= 768) {
-                event.preventDefault();
+        dropdownToggles.forEach(dropdownToggle => {
+            const dropdown = dropdownToggle.closest('.nav-item');
 
-                const isOpen = dropdown.classList.toggle('open');
-                dropdownToggle.setAttribute('aria-expanded', isOpen);
-            }
+            dropdownToggle.addEventListener('click', (event) => {
+                if (window.innerWidth <= 768) {
+                    event.preventDefault();
+
+                    const isOpen = dropdown.classList.toggle('open');
+                    dropdownToggle.setAttribute('aria-expanded', isOpen);
+                }
+            });
+        });
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navContainer = document.querySelector('.nav-link-container');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navContainer.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', isOpen);
         });
     </script>
 </nav>
