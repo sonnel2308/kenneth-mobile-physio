@@ -22,6 +22,8 @@
                 
                 <!-- Form structure -->
                 <form action="/book-appointment" method="POST" class="booking-form">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
                     <div class="form-group">
                         <label for="relationship_to_client">Are you the client or booking on behalf of someone else? <span class="required">*</span></label>
                         <select name="relationship_to_client" id="relationship_to_client" class="form-control" required>
