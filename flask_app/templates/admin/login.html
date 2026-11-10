@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/login.css') }}">
+  </head>
+  <body>
+    <div class="admin-login-page">
+      <div class="admin-login-container">
+        <a href="/">Back</a>
+
+        <h1 class="admin-login-title">Admin Login</h1>
+  
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+          {% endfor %}
+        {% endwith %}
+  
+        <form class="login-form" action="/admin/login" method="post">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  
+          <div class="form-group">
+            <label for="password">Admin Password</label>
+            <input type="password" id="password" name="password" required>
+            <button type="button" id="view-password-btn">View Password</button>
+          </div>
+  
+          <button type="submit" class="btn-login">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const viewPasswordBtn = document.getElementById("view-password-btn");
+      const passwordInput = document.getElementById("password");
+
+      viewPasswordBtn.addEventListener("click", () => {
+          const isPasswordHidden = passwordInput.type === "password";
+
+          passwordInput.type = isPasswordHidden ? "text" : "password";
+          viewPasswordBtn.textContent = isPasswordHidden ? "Hide Password" : "View Password";
+      });
+    </script>
+  </body>
+</html>

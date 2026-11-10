@@ -1,0 +1,159 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout-form {
+    margin: 2vh 0;
+}
+
+/* Logout button styling */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color translateY 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+
+/* Admin Dashboard Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+.table th,
+.table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.table th {
+    font-weight: 600;
+    color: var(--color-dark);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: #f8f9fa;
+}
+
+.table td {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-friendly table adjustments */
+@media (max-width: 768px) {
+    .table th,
+    .table td {
+        padding: 10px 8px;
+        font-size: 0.8rem;
+    }
+    
+    .table th {
+        font-size: 0.75rem;
+    }
+}
+
+/* Empty state styling */
+table + p {
+    color: var(--color-text-muted);
+    font-style: italic;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Button styling */
+.btn-edit,
+.btn-delete,
+.btn-save,
+.btn-cancel {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-edit:hover,
+.btn-save:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: white;
+}
+
+/* Prevent input fields from expanding column width */
+table td input,
+table td textarea,
+table td select {
+    width: 100%;
+    min-width: 6vw;
+    box-sizing: border-box;
+    padding: 4px 8px;
+    font-size: 0.875rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+}
+
+table td input:focus,
+table td textarea:focus,
+table td select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(108, 117, 125, 0.25);
+}
+
+table td textarea {
+    min-height: 40px;
+    resize: vertical;
+}
+
+/* Make actions column fixed width */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

@@ -1,25 +1,36 @@
-from flask import Flask, render_template, request
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
 import os
+from flask import Flask, render_template, request
+from flask_wtf.csrf import CSRFProtect
+from datetime import timedelta
+from datetime import datetime
 
-from config import SQLALCHEMY_DATABASE_URI, STATIC_IMAGES_PATH
+from config import SQLALCHEMY_DATABASE_URI, STATIC_IMAGES_PATH, SECRET_KEY
 from database import db
+from extensions import limiter
+from routes.admin import admin_bp
 from services.booking import BookingService
 
 
 app = Flask(__name__)
+
+app.secret_key = SECRET_KEY
+app.register_blueprint(admin_bp)
 app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+app.config.update(
+    SECRET_KEY=SECRET_KEY,
+    SESSION_COOKIE_SECURE=True,
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+    PERMANENT_SESSION_LIFETIME=timedelta(minutes=30)
+)
+
 db.init_app(app)
 
 with app.app_context():
     db.create_all()
 
-limiter = Limiter(
-    get_remote_address,
-    app=app,
-    default_limits=[]
-)
+csrf = CSRFProtect(app)
+limiter.init_app(app)
 
 
 @app.route('/')
@@ -59,7 +70,6 @@ def contact_page():
     return render_template('contact.html', title='Contact Us')
 
 @app.route('/book-appointment', methods=['POST'])
-@limiter.limit("3 per 10 minutes")
 def book_appointment():
     """Handles the form submission for booking."""
     form = request.form
@@ -76,22 +86,27 @@ def book_appointment():
     ndis_number = form.get("ndis_number", "").strip() or None
     client_concern = form.get("client_concern", "").strip() or None
     
+    form_data = {
+        "relationship_to_client": relationship_to_client,
+        "client_full_name": client_full_name,
+        "client_gender": client_gender,
+        "client_dob": client_dob,
+        "phone_number": phone_number,
+        "email": email,
+        "suburb": suburb,
+        "resident_type": resident_type,
+        "referral_type": referral_type,
+        "ndis_number": ndis_number,
+        "client_concern": client_concern
+    }
+    
     booking_service = BookingService()
-    booking_service.create_booking(
-        relationship_to_client=relationship_to_client,
-        client_full_name=client_full_name,
-        client_gender=client_gender,
-        client_dob=client_dob,
-        phone_number=phone_number,
-        email=email,
-        suburb=suburb,
-        resident_type=resident_type,
-        referral_type=referral_type,
-        ndis_number=ndis_number,
-        client_concern=client_concern
-    )
+    booking = booking_service.create_booking(form_data)
 
-    return render_template('booking.html')
+    if not booking:
+        return "<h1>Failed to create booking request</h1>"
+
+    return render_template('booking-request-submitted.html')
 
 
 if __name__ == '__main__':

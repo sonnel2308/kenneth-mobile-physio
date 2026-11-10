@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointment | Kenneth Mobile Physiotherapy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view-appointment.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'components/navbar.html' %}
+
+    <section class="booking-section section-padding">
+        <div class="container">
+            <div class="form-card">
+                <h2>Your Appointment Details</h2>
+                <p class="subtitle">Below are the details of your physiotherapy appointment booking.</p>
+
+                <div class="view-appointment-table">
+                    <!-- Client Information Section -->
+                    <div class="table-section">
+                        <h3>Client Information</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="label">Full Name</td>
+                                <td class="value">{{ booking.client_full_name or '—' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Gender</td>
+                                <td class="value">{{ booking.client_gender or '—' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Date of Birth</td>
+                                <td class="value">{{ booking.client_dob or '—' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Contact Information Section -->
+                    <div class="table-section">
+                        <h3>Contact Information</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="label">Phone Number</td>
+                                <td class="value">{{ booking.phone_number or '—' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Email Address</td>
+                                <td class="value">{{ booking.email or '—' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Client's Residence Section -->
+                    <div class="table-section">
+                        <h3>Client's Residence</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="label">Suburb</td>
+                                <td class="value">{{ booking.suburb or '—' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Resident Type</td>
+                                <td class="value">{{ booking.resident_type or '—' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Referral Information Section -->
+                    <div class="table-section">
+                        <h3>Referral Information</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="label">Relationship to Client</td>
+                                <td class="value">{{ booking.relationship_to_client or '—' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Type of Referral</td>
+                                <td class="value">{{ booking.referral_type or '—' }}</td>
+                            </tr>
+                            <tr>
+                                <td class="label">NDIS Number</td>
+                                <td class="value">{{ booking.ndis_number or '—' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="table-section">
+                        <h3>Additional Comments</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="label">Client's Main Concern or Reason for Referral:</td>
+                                <td class="value">{{ booking.client_concern or '—' }}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <p class="disclaimer">These details were submitted for your appointment booking. If you need to update or cancel your appointment, please contact us at 0451 798 814.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/footer.html' %}
+</body>
+</html>

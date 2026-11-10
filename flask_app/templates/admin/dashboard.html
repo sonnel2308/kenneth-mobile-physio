@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Kenneth Mobile Physiotherapy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/dashboard.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="section-padding">
+    <div style="margin: 0 2vw;">
+      <div class="header">
+        <div>
+          <img src="{{ url_for('static', filename='images/brand-logo.png') }}" style="height: 64px">
+          <h1>Admin Dashboard</h1>
+        </div>
+
+        <form action="/admin/logout" method="POST" class="logout-form">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button type="submit" class="btn btn-secondary">Logout</button>
+        </form>
+      </div>
+
+      {% if bookings %}
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Relationship to Client</th>
+              <th>Client Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Suburb</th>
+              <th>Client DOB</th>
+              <th>Client Gender</th>
+              <th>Resident Type</th>
+              <th>NDIS Number</th>
+              <th>Referral Type</th>
+              <th>Concern</th>
+              <th>Date Created</th>
+              <th>Contact</th>
+              <th>Comments</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for booking in bookings %}
+            <tr data-booking-id="{{ booking.id }}">
+              <td data-field="relationship_to_client" data-value="{{ booking.relationship_to_client }}" data-display="{{ booking.relationship_to_client }}">
+                {{ booking.relationship_to_client }}
+              </td>
+              <td data-field="client_full_name" data-value="{{ booking.client_full_name }}" data-display="{{ booking.client_full_name }}">
+                {{ booking.client_full_name }}
+              </td>
+              <td data-field="phone_number" data-value="{{ booking.phone_number }}" data-display="{{ booking.phone_number }}">
+                {{ booking.phone_number }}
+              </td>
+              <td data-field="email" data-value="{{ booking.email }}" data-display="{{ booking.email }}">
+                {{ booking.email }}
+              </td>
+              <td data-field="suburb" data-value="{{ booking.suburb }}" data-display="{{ booking.suburb }}">
+                {{ booking.suburb }}
+              </td>
+              <td data-field="client_dob" data-type="date" data-value="{{ booking.client_dob.isoformat() if booking.client_dob else '' }}" data-display="{{ booking.client_dob.strftime('%d/%m/%Y') if booking.client_dob else '-' }}">
+                {{ booking.client_dob.strftime("%d/%m/%Y") if booking.client_dob else '-' }}
+              </td>
+              <td data-field="client_gender" data-value="{{ booking.client_gender }}" data-display="{{ booking.client_gender }}">
+                {{ booking.client_gender }}
+              </td>
+              <td data-field="resident_type" data-value="{{ booking.resident_type }}" data-display="{{ booking.resident_type }}">
+                {{ booking.resident_type }}
+              </td>
+              <td data-field="ndis_number" data-value="{{ booking.ndis_number or '' }}" data-display="{{ booking.ndis_number or 'N/A' }}">
+                {{ booking.ndis_number or 'N/A' }}
+              </td>
+              <td data-field="referral_type" data-value="{{ booking.referral_type or '' }}" data-display="{{ booking.referral_type or 'Not specified' }}">
+                {{ booking.referral_type or 'Not specified' }}
+              </td>
+              <td data-field="client_concern" data-type="textarea" data-value="{{ booking.client_concern or '' }}" data-display="{{ booking.client_concern or 'N/A' }}">
+                {{ booking.client_concern or 'N/A' }}
+              </td>
+              <td>
+                {{ booking.created_at.strftime("%d/%m/%Y, %I:%M %p") }}
+              </td>
+              <td data-field="client_contact" data-type="status" data-value="{{ booking.client_contact }}" data-display="{{ booking.client_contact }}">
+                {{ booking.client_contact }}
+              </td>
+              <td data-field="comments" data-type="textarea" data-value="{{ booking.comments or '' }}" data-display="{{ booking.comments or '-' }}">
+                {{ booking.comments or '-' }}
+              </td>
+              <td class="actions">
+                <button type="button" class="btn-edit">Edit</button>
+                <button type="button" class="btn-delete">Delete</button>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p>No bookings found.</p>
+      {% endif %}
+
+    </div>
+  </section>
+
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+
+</html>

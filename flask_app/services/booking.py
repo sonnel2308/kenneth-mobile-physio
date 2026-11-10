@@ -1,6 +1,6 @@
 import logging
 import resend
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from flask import render_template
 
 from database import db
@@ -11,20 +11,36 @@ from models.booking import Booking
 logger = logging.getLogger(__name__)
 
 class BookingService():
-    def create_booking(self, relationship_to_client: str, client_full_name: str, client_gender: str, client_dob: datetime, phone_number: str, email: str, suburb: str, resident_type: str, referral_type: str, ndis_number: str, client_concern: str):
-        booking = Booking(
-            relationship_to_client=relationship_to_client,
-            client_full_name=client_full_name,
-            client_gender=client_gender,
-            client_dob=client_dob,
-            phone_number=phone_number,
-            email=email,
-            suburb=suburb,
-            resident_type=resident_type,
-            referral_type=referral_type,
-            ndis_number=ndis_number,
-            client_concern=client_concern
-        )
+    def _send_email(self, receiver: str, html_template: str, booking: Booking, verification_url: str = None):
+        try:
+            resend.Emails.send({
+                "from": NOTIFICATION_EMAIL_SENDER,
+                "to": receiver,
+                "subject": "New Appointment Request Notification",
+                "html": render_template(html_template, booking=booking),
+            })
+        except Exception as e:
+            logger.exception(f"Failed to send email notification for {booking.id}: {e}")
+    
+    def get_bookings(self) -> list[Booking]:
+        stmt = db.select(Booking)
+        bookings = db.session.execute(stmt).scalars().all()
+        
+        return bookings
+    
+    def get_booking(self, id: int) -> Booking | None:
+        stmt = db.select(Booking).where(Booking.id == int)
+        booking = db.session.execute(stmt).scalar_one_or_none()
+        
+        if booking is None:
+            return None
+        
+        return booking
+    
+    def create_booking(self, form_data: dict) -> Booking | None:
+        email = form_data["email"]
+        
+        booking = Booking(**form_data)
         
         try:
             db.session.add(booking)
@@ -33,26 +49,28 @@ class BookingService():
         except Exception as e:
             db.session.rollback()
             logger.exception(f"Error creating booking appointment request: {e}")
+            return None
 
-        try:
-            resend.Emails.send({
-                "from": NOTIFICATION_EMAIL_SENDER,
-                "to": NOTIFICATION_EMAIL_RECEIVER,
-                "subject": "New Appointment Request Notification",
-                "html": render_template("emails/booking_notification.html", booking=booking)
-            })
-        except Exception as e:
-            logger.excpetion(f"Failed to send email notification for {booking.id}: {e}")
-        
-        try:
-            resend.Emails.send({
-                "from": NOTIFICATION_EMAIL_SENDER,
-                "to": email,
-                "subject": "New Appointment Request Notification",
-                "html": render_template("emails/client_booking_confirmation.html", booking=booking)
-            })
-        except Exception as e:
-            logger.exception(f"Failed to send email notification for {booking.id}: {e}")
+        self._send_email(NOTIFICATION_EMAIL_RECEIVER, "emails/booking-notification.html", booking)
+        self._send_email(email, "emails/client-booking-confirmation.html", booking)
             
-        
         return booking
+
+    def update_booking(self, booking_id: int, data: dict) -> bool:
+        stmt = db.select(Booking).where(Booking.id == booking_id)
+        booking = db.session.execute(stmt).scalar_one_or_none()
+        
+        if booking is None:
+            return False
+        
+        for field, value in data.items():
+            try:
+                setattr(booking, field, value)
+            except Exception as e:
+                logger.log(f"Failed to update booking {booking_id} with ({field}, {value}): {e}")
+                db.session.rollback()
+                return False
+        
+        db.session.commit()
+        
+        return True
