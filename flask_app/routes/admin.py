@@ -55,11 +55,19 @@ def dashboard():
 
     return render_template('admin/dashboard.html', bookings=bookings)
 
-@admin_bp.route("/bookings/<int:booking_id>", methods=['PATCH'])
+@admin_bp.route("/bookings/<int:booking_id>", methods=['PATCH', 'DELETE'])
 @admin_required
 def booking(booking_id: int):
     booking_service = BookingService()
-    data = request.get_json()
-    booking_service.update_booking(booking_id, data)
     
-    return jsonify(status="success", code=201)
+    if request.method == 'PATCH':
+        data = request.get_json()
+        if booking_service.update_booking(booking_id, data):
+            return jsonify(status="success", code=200), 200
+        
+        return jsonify(error="Invalid request"), 400
+    elif request.method == 'DELETE':
+        if booking_service.delete_booking(booking_id):
+            return jsonify(status="success", code=200), 200
+        
+        return jsonify(error="Invalid request"), 400

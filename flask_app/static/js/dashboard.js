@@ -159,6 +159,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  async function deleteBooking(row) {
+    const bookingId = row.dataset.bookingId;
+
+    if (!confirm("Are you sure you want to delete this booking? This action cannot be undone.")) {
+      return;
+    }
+
+    try {
+      const response = await fetch(`/admin/bookings/${bookingId}`, {
+        method: "DELETE",
+        headers: {
+          "X-CSRFToken": csrfToken
+        }
+      });
+
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        alert(result.error || "Failed to delete booking.");
+        return;
+      }
+
+      // Remove the booking from the dashboard without reloading.
+      row.remove();
+
+    } catch (error) {
+      console.error("Booking deletion failed:", error);
+      alert("An error occurred while deleting the booking.");
+    }
+  }
+
   document.addEventListener("click", event => {
     const button = event.target.closest("button");
     if (!button) return;
@@ -176,6 +206,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (button.classList.contains("btn-save")) {
       saveBooking(row);
+    }
+
+    if (button.classList.contains("btn-delete")) {
+      deleteBooking(row);
     }
   });
 

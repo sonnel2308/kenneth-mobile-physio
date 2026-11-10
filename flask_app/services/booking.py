@@ -74,3 +74,14 @@ class BookingService():
         db.session.commit()
         
         return True
+
+    def delete_booking(self, booking_id: int) -> bool:
+        stmt = db.delete(Booking).where(Booking.id == booking_id)
+        try:
+            db.session.execute(stmt)
+            db.session.commit()
+            return True
+        except Exception as e:
+            logger.log(f"Failed to delete booking {booking_id}: {e}")
+            db.session.rollback()
+            return False
