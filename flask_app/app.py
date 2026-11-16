@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect
 from flask_wtf.csrf import CSRFProtect
 from datetime import timedelta
 
@@ -121,10 +121,10 @@ def contact_message():
     }
     
     subject = f"[MESSAGE] {contact['name']}"
-    send_email('emails/contact-message.html', subject, contact=contact)
+    send_email(None, 'emails/contact-message.html', subject, contact=contact)
     
-    
-    return render_template('contact.html')
+    flash("Thank you, your message has been submitted!", "success")
+    return redirect('/contact')
 
 
 if __name__ == '__main__':

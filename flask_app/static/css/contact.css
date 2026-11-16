@@ -162,6 +162,15 @@
     min-height: 120px;
 }
 
+.success {
+    color: #28a745;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 8px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-grid {

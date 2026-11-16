@@ -14,6 +14,12 @@
     {% import 'macros.html' as components %}
 
     <section class="contact-section section-padding bg-light">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+          {% endfor %}
+        {% endwith %}
+
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
