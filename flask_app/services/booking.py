@@ -1,27 +1,13 @@
 import logging
-import resend
-from datetime import datetime, timedelta, timezone
-from flask import render_template
 
 from database import db
-from config import NOTIFICATION_EMAIL_RECEIVER, NOTIFICATION_EMAIL_SENDER
 from models.booking import Booking
+from utils import send_email
 
 
 logger = logging.getLogger(__name__)
 
 class BookingService():
-    def _send_email(self, receiver: str, html_template: str, booking: Booking, verification_url: str = None):
-        try:
-            resend.Emails.send({
-                "from": NOTIFICATION_EMAIL_SENDER,
-                "to": receiver,
-                "subject": "New Appointment Request Notification",
-                "html": render_template(html_template, booking=booking),
-            })
-        except Exception as e:
-            logger.exception(f"Failed to send email notification for {booking.id}: {e}")
-    
     def get_bookings(self) -> list[Booking]:
         stmt = db.select(Booking)
         bookings = db.session.execute(stmt).scalars().all()
@@ -51,8 +37,8 @@ class BookingService():
             logger.exception(f"Error creating booking appointment request: {e}")
             return None
 
-        self._send_email(NOTIFICATION_EMAIL_RECEIVER, "emails/booking-notification.html", booking)
-        self._send_email(email, "emails/client-booking-confirmation.html", booking)
+        send_email(None, "emails/booking-notification.html", f"[BOOKING REQUEST] {booking.client_full_name}", booking=booking)
+        send_email(email, "emails/client-booking-confirmation.html", "We've received your booking request", booking=booking)
             
         return booking
 

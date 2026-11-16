@@ -48,7 +48,9 @@
 
                 <div class="contact-form-section">
                     <h2>Send Us a Message</h2>
-                    <form class="contact-form" action="/contact-submit" method="POST">
+                    <form class="contact-form" action="/contact-message" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -59,7 +61,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="04xx xxx xxx">
+                            <input type="tel" id="phone" name="phone" placeholder="04xx xxx xxx" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>

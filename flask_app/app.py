@@ -2,13 +2,13 @@ import os
 from flask import Flask, render_template, request
 from flask_wtf.csrf import CSRFProtect
 from datetime import timedelta
-from datetime import datetime
 
 from config import SQLALCHEMY_DATABASE_URI, STATIC_IMAGES_PATH, SECRET_KEY
 from database import db
 from extensions import limiter
 from routes.admin import admin_bp
 from services.booking import BookingService
+from utils import send_email
 
 
 app = Flask(__name__)
@@ -107,6 +107,24 @@ def book_appointment():
         return "<h1>Failed to create booking request</h1>"
 
     return render_template('booking-request-submitted.html')
+
+@app.route('/contact-message', methods=['POST'])
+def contact_message():
+    """Handles the form for contact message."""
+    form = request.form
+    
+    contact = {
+        "name": form.get("name", ""),
+        "email": form.get("email", ""),
+        "phone": form.get("phone", ""),
+        "message": form.get("message", "")
+    }
+    
+    subject = f"[MESSAGE] {contact['name']}"
+    send_email('emails/contact-message.html', subject, contact=contact)
+    
+    
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':
