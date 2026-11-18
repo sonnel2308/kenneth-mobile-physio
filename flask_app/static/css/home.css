@@ -133,6 +133,18 @@
 
 /* RESPONSIVENESS */
 @media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-content .disclaimer {
+        font-size: 0.8rem;
+    }
+
     .service-grid, .process-content, .about-grid {
         flex-direction: column;
         gap: 25px;

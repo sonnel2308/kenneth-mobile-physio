@@ -3,11 +3,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <div class="container">
         <div class="footer-subsection footer-cta">
-            <img src="{{ url_for('static', filename='images/brand-logo-solid.png') }}" style="height:128px; align-self: center;" />
+            <img class="footer-brand-logo" src="{{ url_for('static', filename='images/brand-logo-solid.png') }}" />
             <h2>Ready to move better?</h2>
             <p class="subtitle">Schedule your consultation today.</p>
             
-            <a href="/booking" class="btn btn-primary btn-large">
+            <a href="/booking" class="btn btn-primary btn-large footer-cta-btn">
                 {{ components.icon('calendar') }}
                 Book Appointment
             </a>

@@ -9,12 +9,6 @@
     margin-bottom: 15px;
 }
 
-.footer-section .btn {
-    width: 20vw;
-    margin: 1vh 1vw;
-    overflow-wrap: break-word;
-}
-
 .footer-section .subtitle {
     font-size: 1.1rem;
 }
@@ -67,9 +61,18 @@
     gap: 1.5rem;
 }
 
+.footer-brand-logo {
+    height: 128px;
+    align-self: center;
+}
+
 /* Responsive Design */
 @media (max-width: 1280px) {
     .footer-subsection:not(.footer-cta) {
         display: none;
+    }
+
+    .footer-brand-logo {
+        height: 64px;
     }
 }

@@ -130,3 +130,9 @@
 #support-at-home-providers, #general-practitioners, #ndis {
     scroll-margin-top: 150px;
 }
+
+@media(max-width: 768px) {
+    .referrer-container {
+        width: auto;
+    }
+}

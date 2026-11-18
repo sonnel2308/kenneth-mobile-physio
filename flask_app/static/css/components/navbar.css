@@ -150,6 +150,15 @@
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
+    .logo img {
+        height: 32px;
+    }
+
+    .nav-details {
+        font-size: 0.9rem;
+    }
+
+
     .navbar .container {
         flex-direction: column;
         gap: 15px;
