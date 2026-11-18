@@ -81,6 +81,7 @@
     background-image: var(--card-image);
     background-size: cover;
     background-position: center;
+    display: block;
 }
 
 .service-card:hover {
@@ -90,15 +91,17 @@
 }
 
 .service-card-overlay {
+    position: absolute;
+    inset: 0;
     color: white;
     font-size: 1.5rem;
-    height: 100%;
     margin: 0;
     padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(0.5px) brightness(0.4);
+    backdrop-filter: brightness(0.4);
+    box-sizing: border-box;
 }
 
 /* SLIDER */
