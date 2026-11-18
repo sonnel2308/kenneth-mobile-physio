@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, flash, redirect
+from flask import Flask, render_template, request, flash, redirect, send_from_directory
 from flask_wtf.csrf import CSRFProtect
 from datetime import timedelta
 
@@ -38,6 +38,22 @@ def index():
     service_coverage_images_path = STATIC_IMAGES_PATH / "affiliations"
     service_coverage_images = os.listdir(service_coverage_images_path)
     return render_template('index.html', title='Home Page', service_coverage_images=service_coverage_images)
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(
+        app.static_folder,
+        'sitemap.xml',
+        mimetype='application/xml'
+    )
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(
+        app.static_folder,
+        'robots.txt',
+        mimetype='text/plain'
+    )
 
 @app.route('/booking', methods=['GET'])
 def booking_page():
